@@ -44,8 +44,8 @@ export default function About() {
                 <div className="absolute inset-0 bg-[#0F2747]/10 pointer-events-none rounded-2xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-xl shadow-xl hidden md:block max-w-[200px]">
-                <div className="text-3xl font-extrabold mb-1">500+</div>
-                <div className="font-medium text-white/90 text-sm">Industrial clients across Maharashtra and India</div>
+                <div className="text-3xl font-extrabold mb-1">Grade A</div>
+                <div className="font-medium text-white/90 text-sm">GS1 barcode quality standard — every batch, every order</div>
               </div>
             </motion.div>
 

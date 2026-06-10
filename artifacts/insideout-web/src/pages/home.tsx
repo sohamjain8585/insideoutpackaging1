@@ -21,9 +21,9 @@ import colorRibbonsImg from "@assets/img10_1781094388915.png";
 import labelRollImg from "@assets/img_rool_1781094388917.png";
 
 const stats = [
-  { value: "500+", label: "Clients Served" },
   { value: "17+", label: "Product Variants" },
   { value: "48hr", label: "Order Dispatch" },
+  { value: "9+", label: "Industries Served" },
   { value: "100%", label: "QC Certified Stock" },
 ];
 
@@ -335,8 +335,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-primary/60 translate-x-4 translate-y-4 rounded-2xl -z-10" />
               <img src={barcodeLabelsImg} alt="Barcode label rolls manufactured by Inside Out Packaging Industries" className="rounded-2xl shadow-xl w-full h-[460px] object-contain bg-slate-50 p-6" />
               <div className="absolute -bottom-6 -left-6 bg-[#0F2747] text-white p-6 rounded-xl shadow-xl hidden md:block max-w-[220px]">
-                <div className="text-3xl font-extrabold text-primary mb-1">500+</div>
-                <div className="text-sm font-medium text-slate-300">Procurement teams across India trust our labels on their production lines</div>
+                <div className="text-3xl font-extrabold text-primary mb-1">Grade A</div>
+                <div className="text-sm font-medium text-slate-300">Barcode print quality verified on every batch before dispatch</div>
               </div>
             </motion.div>
           </div>
@@ -483,7 +483,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-4">Client Testimonials</span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0F2747] mb-4">What Procurement Teams Say</h2>
-            <p className="text-lg text-slate-600">Logistics providers, pharmaceutical manufacturers, and food processors — here's why they keep reordering.</p>
+            <p className="text-lg text-slate-600">Logistics providers, pharmaceutical manufacturers, and food processors — here's what they look for in a reliable label supplier.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
