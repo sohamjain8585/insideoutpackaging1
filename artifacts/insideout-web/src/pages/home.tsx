@@ -8,7 +8,7 @@ import { ArrowRight, ShieldCheck, Factory, Globe2, CheckCircle2, ChevronRight } 
 
 import heroImg from "@assets/img18_1781094388914.png";
 import logisticsImg from "@assets/img5_1781094388916.png";
-import promoImg from "@assets/ChatGPT_Image_Jun_2,_2026,_12_40_34_PM_1781094388917.png";
+import promoImg from "@assets/img5_1781094388916.png";
 
 const stats = [
   { value: "500+", label: "Happy Clients" },
@@ -163,11 +163,11 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="group rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full bg-white"
               >
-                <div className="aspect-[4/3] bg-slate-50 relative overflow-hidden">
+                <div className="aspect-[4/3] bg-white relative overflow-hidden flex items-center justify-center p-4">
                   <img 
                     src={product.image} 
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     {product.category}
