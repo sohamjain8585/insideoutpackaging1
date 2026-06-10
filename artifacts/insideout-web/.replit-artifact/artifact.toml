@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Inside Out Packaging Industries"
+version = "1.0.0"
+id = "artifacts/insideout-web"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24823
+
+[services.development]
+run = "pnpm --filter @workspace/insideout-web run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/insideout-web", "run", "build" ]
+publicDir = "artifacts/insideout-web/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24823"
+BASE_PATH = "/"

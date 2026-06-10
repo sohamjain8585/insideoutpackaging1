@@ -1,0 +1,184 @@
+Act as a world-class Industrial Branding Agency, Senior UI/UX Designer, React Architect, SEO Strategist, CRO (Conversion Rate Optimization) Expert, and B2B Manufacturing Website Specialist.
+
+Create a complete premium industrial website for:
+
+COMPANY:
+Inside Out Packaging Industries
+
+BUSINESS:
+Manufacturer and Supplier of Barcode Labels, Thermal Transfer Ribbons, Resin Ribbons, Wax Ribbons, Wax Resin Ribbons, Billing Rolls, Thermal Rolls, POS Rolls, Shipping Labels, Product Identification Labels, Asset Labels, Inventory Labels, Packaging Labels, and Industrial Labeling Solutions.
+
+REFERENCE WEBSITES:
+https://www.prezotech.com
+https://barcodepune.com
+https://www.dishabarcode.com
+
+GOAL:
+Build a premium, enterprise-grade website that positions the company as a trusted industrial manufacturer and generates high-quality B2B leads.
+
+DESIGN STYLE:
+
+• Modern Industrial Theme
+• Premium Corporate Appearance
+• White Background
+• Navy Blue (#0F2747)
+• Orange Accent (#F97316)
+• Glassmorphism Elements
+• Manufacturing & Warehouse Visuals
+• Large Hero Sections
+• Clean Typography
+• Smooth Animations
+• Mobile First Design
+• Fast Loading
+• SEO Optimized
+• Professional Product Photography
+
+VISUAL CONTENT MUST INCLUDE:
+
+• Barcode Label Rolls
+• Thermal Transfer Ribbon Rolls
+• Wax Ribbon Rolls
+• Resin Ribbon Rolls
+• Barcode Printers
+• Thermal Printers
+• Warehouse Scanning Operations
+• Manufacturing Packaging Lines
+• Product Identification Applications
+• Logistics & Shipping Labels
+• Inventory Tracking Systems
+• Retail Barcode Applications
+
+WEBSITE PAGES:
+
+1. Home
+2. About Us
+3. Products
+4. Applications
+5. Industries Served
+6. Gallery
+7. Contact Us
+
+HOME PAGE SECTIONS:
+
+• Hero Banner
+• Company Introduction
+• Featured Products
+• Industries Served
+• Why Choose Us
+• Product Applications
+• Manufacturing Process
+• Quality Assurance
+• Customer Benefits
+• Testimonials
+• FAQ Section
+• Call To Action
+• Contact Section
+
+PRODUCTS PAGE:
+
+Create dedicated cards with image, specifications, features, benefits, applications and inquiry buttons for:
+
+• Barcode Labels
+• Thermal Labels
+• Direct Thermal Labels
+• Semi Gloss Labels
+• PP Labels
+• PET Labels
+• Asset Labels
+• Void Labels
+• Shipping Labels
+• Product Labels
+• Thermal Transfer Ribbon
+• Wax Ribbon
+• Wax Resin Ribbon
+• Resin Ribbon
+• Billing Rolls
+• Thermal Paper Rolls
+• POS Rolls
+
+APPLICATIONS:
+
+• Manufacturing
+• Automotive
+• FMCG
+• Warehousing
+• Retail
+• Logistics
+• E-Commerce
+• Pharmaceutical
+• Food Processing
+• Packaging Industry
+
+CONTACT DETAILS:
+
+Company Name:
+Inside Out Packaging Industries
+
+Email:
+[SJ.INSIDEOUT@GMAIL.COM](mailto:SJ.INSIDEOUT@GMAIL.COM)
+
+CONTACT FEATURES:
+
+• Inquiry Form
+• Request Quote Form
+• WhatsApp Integration
+• Click To Call
+• Email Integration
+• Google Maps
+• Floating WhatsApp Button
+• Sticky Quote Button
+
+TRUST BUILDING:
+
+• Quality Commitment
+• Customer Satisfaction
+• Fast Delivery
+• Technical Support
+• Custom Label Manufacturing
+• Bulk Production Capability
+• Industry Expertise
+
+SEO REQUIREMENTS:
+
+Target Keywords:
+
+• Barcode Labels Manufacturer
+• Barcode Labels Supplier
+• Thermal Transfer Ribbon Supplier
+• Resin Ribbon Supplier
+• Shipping Labels Manufacturer
+• Industrial Label Solutions
+• Barcode Labels Pune
+• Barcode Labels Maharashtra
+
+TECH STACK:
+
+• React.js
+• Tailwind CSS
+• Framer Motion
+• React Router
+• Responsive Architecture
+
+OUTPUT:
+
+Generate complete production-ready source code with:
+
+• Proper Folder Structure
+• Reusable Components
+• Responsive Layouts
+• SEO Metadata
+• Optimized Images
+• Working Forms
+• Professional Content
+• Error-Free Code
+• Deployment Ready Build
+
+IMPORTANT:
+
+Do not generate placeholder content.
+
+Write complete professional content for every page and section.
+
+The final website should look comparable to a premium industrial manufacturing company serving automotive, FMCG, warehousing, logistics and packaging industries across India.
+
+Focus heavily on trust, authority, lead generation, industrial branding and conversion optimization.

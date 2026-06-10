@@ -1,0 +1,50 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "OsH2TpMDWbaCJDjesQrvR"
+uri = "file://artifacts/insideout-web/public/images/asset-labels.png"
+type = "image"
+title = "Asset tags barcode labels"
+
+[[generated]]
+id = "6X0awZstdE92R0Grnlpwh"
+uri = "file://artifacts/insideout-web/public/images/void-labels.png"
+type = "image"
+title = "Void security labels"
+
+[[generated]]
+id = "wG9RGjvriSrcwvxCUOJgt"
+uri = "file://artifacts/insideout-web/public/images/semi-gloss-labels.png"
+type = "image"
+title = "Semi-gloss barcode labels"
+
+[[generated]]
+id = "bDKkoE8cNC5noU5HEGk_C"
+uri = "file://artifacts/insideout-web/public/images/pp-labels.png"
+type = "image"
+title = "Polypropylene PP labels"
+
+[[generated]]
+id = "1x_NU2WWjUgLrPAkzsRgl"
+uri = "file://artifacts/insideout-web/public/images/pet-labels.png"
+type = "image"
+title = "Polyester PET labels"
+
+[[generated]]
+id = "q4gNSTysdCI-mhoI0IdQJ"
+uri = "file://artifacts/insideout-web/public/images/shipping-labels.png"
+type = "image"
+title = "Logistics shipping labels"
+
+[[generated]]
+id = "3n6w2vxc8qRNckp3sujQS"
+uri = "file://artifacts/insideout-web/public/images/product-labels.png"
+type = "image"
+title = "Custom product labels"
+
+[[generated]]
+id = "OW9zQoD6_X9sTggqX-T2V"
+uri = "file://artifacts/insideout-web/public/images/thermal-paper-rolls.png"
+type = "image"
+title = "Thermal paper rolls"
