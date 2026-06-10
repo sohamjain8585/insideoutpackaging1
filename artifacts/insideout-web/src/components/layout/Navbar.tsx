@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, ChevronRight, Phone } from "lucide-react";
+import { Menu, X, ChevronRight, Phone, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoPng from "@assets/Logo_(8)_1781094388919.png";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,106 +29,140 @@ export function Navbar() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || location !== "/"
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 z-50" data-testid="link-logo">
-          <img src={logoPng} alt="Inside Out Packaging Industries" className="h-10 md:h-12 w-auto object-contain" />
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+    <>
+      {/* Top Contact Bar */}
+      <div className="hidden lg:block bg-[#0F2747] text-white text-xs py-2 z-50 relative">
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === link.href
-                    ? "text-primary font-semibold"
-                    : isScrolled || location !== "/"
-                    ? "text-slate-700"
-                    : "text-white"
-                }`}
-                data-testid={`link-nav-${link.name.toLowerCase()}`}
-              >
-                {link.name}
-              </Link>
-            ))}
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <Phone className="h-3 w-3 text-primary" />
+              <a href="tel:8530658864" className="hover:text-white transition-colors">+91 8530658864</a>
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <Mail className="h-3 w-3 text-primary" />
+              <a href="mailto:SJ.insideout@gmail.com" className="hover:text-white transition-colors">SJ.insideout@gmail.com</a>
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <MessageCircle className="h-3 w-3 text-green-400" />
+              <a href="https://wa.me/918530658864" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">WhatsApp Us</a>
+            </span>
           </div>
-          <div className="flex items-center gap-4 border-l border-white/20 pl-6">
-            <Link href="/contact" data-testid="button-nav-quote">
-              <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-semibold">
-                Get Free Quote
-              </Button>
-            </Link>
+          <div className="flex items-center gap-6 text-slate-300">
+            <span>Mon - Sat: 9:00 AM - 6:00 PM IST</span>
+            <span className="bg-primary/20 text-primary px-2 py-0.5 rounded font-medium">Maharashtra, India</span>
           </div>
-        </nav>
+        </div>
+      </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="lg:hidden z-50 p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          data-testid="button-mobile-menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className={`h-6 w-6 ${isScrolled || location !== "/" ? "text-slate-900" : "text-slate-900 lg:text-white"}`} />
-          ) : (
-            <Menu className={`h-6 w-6 ${isScrolled || location !== "/" ? "text-slate-900" : "text-white"}`} />
-          )}
-        </button>
+      {/* Main Navbar */}
+      <header
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || location !== "/"
+            ? "bg-white/97 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
+            : "bg-white/97 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 z-50" data-testid="link-logo">
+            <img src={logoPng} alt="Inside Out Packaging Industries" className="h-10 md:h-12 w-auto object-contain" />
+          </Link>
 
-        {/* Mobile Nav */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-0 left-0 right-0 bg-white shadow-xl p-6 pt-24 border-b border-gray-100 lg:hidden flex flex-col gap-4 h-[100dvh] overflow-y-auto"
-            >
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            <div className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center justify-between py-3 border-b border-gray-50 text-lg font-medium ${
-                    location === link.href ? "text-primary" : "text-slate-800"
+                  className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                    location === link.href
+                      ? "text-primary font-semibold"
+                      : "text-slate-700"
                   }`}
-                  data-testid={`link-mobile-nav-${link.name.toLowerCase()}`}
+                  data-testid={`link-nav-${link.name.toLowerCase()}`}
                 >
                   {link.name}
-                  <ChevronRight className="h-4 w-4 text-slate-400" />
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-200 ${location === link.href ? "w-full" : "w-0 group-hover:w-full"}`} />
                 </Link>
               ))}
-              <div className="mt-6 flex flex-col gap-4">
-                <a
-                  href="tel:8530658864"
-                  className="flex items-center justify-center gap-2 py-3 rounded-md bg-slate-100 text-slate-800 font-medium"
-                  data-testid="link-mobile-call"
-                >
-                  <Phone className="h-4 w-4" />
-                  Call Us
-                </a>
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full"
-                >
-                  <Button className="w-full py-6 text-lg bg-primary hover:bg-primary/90">
-                    Get Free Quote
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </header>
+            </div>
+            <div className="flex items-center gap-3 border-l border-slate-200 pl-6">
+              <a href="tel:8530658864" data-testid="link-nav-call">
+                <Button size="sm" variant="outline" className="text-[#0F2747] border-[#0F2747] hover:bg-[#0F2747] hover:text-white font-semibold gap-2">
+                  <Phone className="h-3.5 w-3.5" />
+                  Call Now
+                </Button>
+              </a>
+              <Link href="/contact" data-testid="button-nav-quote">
+                <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-semibold">
+                  Get Free Quote
+                </Button>
+              </Link>
+            </div>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden z-50 p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            data-testid="button-mobile-menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-slate-900" />
+            ) : (
+              <Menu className="h-6 w-6 text-slate-900" />
+            )}
+          </button>
+
+          {/* Mobile Nav */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="absolute top-0 left-0 right-0 bg-white shadow-xl p-6 pt-20 border-b border-gray-100 lg:hidden flex flex-col gap-4 h-[100dvh] overflow-y-auto"
+              >
+                {/* Mobile top contact */}
+                <div className="bg-slate-50 rounded-xl p-4 flex flex-col gap-2 mb-2">
+                  <a href="tel:8530658864" className="flex items-center gap-2 text-sm text-[#0F2747] font-medium">
+                    <Phone className="h-4 w-4 text-primary" /> +91 8530658864
+                  </a>
+                  <a href="https://wa.me/918530658864" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-[#0F2747] font-medium">
+                    <MessageCircle className="h-4 w-4 text-green-500" /> WhatsApp Us
+                  </a>
+                </div>
+
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`flex items-center justify-between py-3 border-b border-gray-50 text-lg font-medium ${
+                      location === link.href ? "text-primary" : "text-slate-800"
+                    }`}
+                    data-testid={`link-mobile-nav-${link.name.toLowerCase()}`}
+                  >
+                    {link.name}
+                    <ChevronRight className="h-4 w-4 text-slate-400" />
+                  </Link>
+                ))}
+                <div className="mt-6 flex flex-col gap-4">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full"
+                  >
+                    <Button className="w-full py-6 text-lg bg-primary hover:bg-primary/90">
+                      Get Free Quote
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </header>
+    </>
   );
 }
