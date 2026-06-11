@@ -1,123 +1,217 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/use-seo";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { PRODUCTS } from "@/data/constants";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
 import { InquiryForm } from "@/components/forms/InquiryForm";
-import { Check, Filter } from "lucide-react";
+import { Check, Filter, ChevronRight, Tag, Package2 } from "lucide-react";
+import { Link } from "wouter";
+
+const categoryMeta: Record<string, { color: string; icon: typeof Tag }> = {
+  Labels: { color: "bg-blue-50 text-blue-700 border-blue-100", icon: Tag },
+  Ribbons: { color: "bg-orange-50 text-orange-700 border-orange-100", icon: Package2 },
+  Rolls: { color: "bg-green-50 text-green-700 border-green-100", icon: Package2 },
+};
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.06 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] } },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
+};
 
 export default function Products() {
   const [filter, setFilter] = useState<string>("All");
   const categories = ["All", ...Array.from(new Set(PRODUCTS.map(p => p.category)))];
-
   const filteredProducts = filter === "All" ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
 
   useSEO({
-    title: "Our Products",
-    description: "Browse our complete catalog of industrial barcode labels, thermal ribbons, billing rolls, and POS supplies.",
-    keywords: "Barcode Labels, Thermal Transfer Ribbons, Billing Rolls, POS Rolls, Wax Resin Ribbon"
+    title: "Product Catalog — Barcode Labels, Thermal Ribbons & POS Rolls",
+    description: "Browse our complete catalog: 10 label variants, 4 ribbon types, 3 POS roll formats. Manufactured for industrial thermal printing operations across India.",
+    keywords: "Barcode Labels, Thermal Transfer Ribbons, Billing Rolls, POS Rolls, Wax Resin Ribbon, TSC Labels India",
   });
 
   return (
     <Layout>
       {/* Page Header */}
-      <section className="pt-32 pb-16 bg-[#0F2747] text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Product Catalog</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Industrial-grade tracking and packaging solutions engineered for performance.
-          </p>
+      <section className="pt-32 pb-20 bg-[#0F2747] text-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] translate-y-1/2 -translate-x-1/2" />
+        </div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-4">
+              17 Product Variants
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Product Catalog</h1>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+              Industrial-grade thermal printing consumables — labels, ribbons, and rolls engineered to spec.
+            </p>
+          </motion.div>
+
+          {/* Category summary pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="flex flex-wrap justify-center gap-4 mt-10"
+          >
+            {[
+              { label: "10 Label Variants", sub: "Paper, Synthetic, Specialty" },
+              { label: "4 Ribbon Types", sub: "Wax · Wax-Resin · Resin" },
+              { label: "3 Roll Formats", sub: "57mm · 79mm · 80mm" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-xl px-5 py-3 text-center">
+                <div className="font-bold text-white">{item.label}</div>
+                <div className="text-xs text-slate-400 mt-0.5">{item.sub}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-slate-50 min-h-screen">
+      <section id="products-grid" className="py-16 bg-slate-50 min-h-screen">
         <div className="container mx-auto px-4 md:px-6">
-          
+
           {/* Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-            <div className="flex items-center gap-2 mr-4 text-slate-500 font-medium">
-              <Filter className="h-4 w-4" /> Filter:
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex flex-wrap items-center justify-center gap-2 mb-12"
+          >
+            <div className="flex items-center gap-2 mr-2 text-slate-400 font-medium text-sm">
+              <Filter className="h-4 w-4" /> Filter by:
             </div>
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                  filter === cat 
-                    ? "bg-primary text-white shadow-md" 
-                    : "bg-white text-slate-600 border border-slate-200 hover:border-primary hover:text-primary"
+                data-testid={`filter-${cat.toLowerCase()}`}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 border ${
+                  filter === cat
+                    ? "bg-[#0F2747] text-white border-[#0F2747] shadow-md"
+                    : "bg-white text-slate-600 border-slate-200 hover:border-primary hover:text-primary"
                 }`}
               >
                 {cat}
               </button>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product, i) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: i * 0.05 }}
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
-              >
-                <div className="aspect-[4/3] bg-white relative p-4 flex items-center justify-center overflow-hidden group">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3 bg-slate-100 text-[#0F2747] text-xs font-bold px-3 py-1 rounded-full uppercase">
-                    {product.category}
-                  </div>
-                </div>
-                
-                <div className="p-6 border-t border-slate-100 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-[#0F2747] mb-2">{product.name}</h3>
-                  <p className="text-slate-600 text-sm mb-6 flex-1">{product.description}</p>
-                  
-                  <ul className="space-y-2 mb-6">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                        <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+          {/* Grid with AnimatePresence */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={filter}
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            >
+              {filteredProducts.map((product) => {
+                const meta = categoryMeta[product.category] ?? { color: "bg-slate-50 text-slate-600 border-slate-100", icon: Tag };
+                return (
+                  <motion.div
+                    key={product.id}
+                    variants={cardVariants}
+                    layout
+                    className="bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+                    data-testid={`card-product-${product.id}`}
+                  >
+                    {/* Image area */}
+                    <div className="aspect-[4/3] bg-white relative flex items-center justify-center overflow-hidden p-4">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Category badge */}
+                      <span className={`absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full border ${meta.color}`}>
+                        {product.category}
+                      </span>
+                      {/* Hover overlay CTA */}
+                      <div className="absolute inset-0 bg-[#0F2747]/0 group-hover:bg-[#0F2747]/5 transition-colors duration-300" />
+                    </div>
 
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button className="w-full font-bold" data-testid={`button-enquire-${product.id}`}>
-                        Enquire Now
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-2xl p-0 overflow-hidden">
-                      <div className="bg-[#0F2747] p-6 text-white">
-                        <DialogTitle className="text-2xl">Enquire about {product.name}</DialogTitle>
-                        <DialogDescription className="text-slate-300 mt-2">
-                          Fill out the form below and our team will get back to you with pricing and details.
-                        </DialogDescription>
-                      </div>
-                      <div className="p-6 max-h-[80vh] overflow-y-auto">
-                        <InquiryForm defaultProduct={product.name} />
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                    <div className="p-5 border-t border-slate-50 flex flex-col flex-1">
+                      <h3 className="text-lg font-bold text-[#0F2747] mb-1.5 leading-snug">{product.name}</h3>
+                      <p className="text-slate-500 text-sm mb-4 flex-1 leading-relaxed">{product.description}</p>
+
+                      <ul className="space-y-1.5 mb-5">
+                        {product.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+                            <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button
+                            className="w-full font-semibold group/btn gap-2"
+                            data-testid={`button-enquire-${product.id}`}
+                          >
+                            Enquire Now
+                            <ChevronRight className="h-4 w-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl p-0 overflow-hidden">
+                          <div className="bg-[#0F2747] p-6 text-white">
+                            <DialogTitle className="text-2xl">Enquire about {product.name}</DialogTitle>
+                            <DialogDescription className="text-slate-300 mt-2">
+                              Fill out the form below and our team will get back to you with pricing and details within 2–4 hours.
+                            </DialogDescription>
+                          </div>
+                          <div className="p-6 max-h-[80vh] overflow-y-auto">
+                            <InquiryForm defaultProduct={product.name} />
+                          </div>
+                        </DialogContent>
+                      </Dialog>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
 
           {filteredProducts.length === 0 && (
-            <div className="text-center py-20 text-slate-500">
-              No products found for this category.
-            </div>
+            <div className="text-center py-20 text-slate-500">No products found for this category.</div>
           )}
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-16 bg-[#0F2747]">
+        <div className="container mx-auto px-4 md:px-6 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Need a Custom Specification?</h2>
+          <p className="text-slate-300 mb-8 max-w-xl mx-auto">Custom label size, adhesive grade, substrate material, core diameter — we manufacture to your exact printer's media spec.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="h-12 px-8 font-semibold">Get Custom Quote</Button>
+            </Link>
+            <a href="https://wa.me/918530658864" target="_blank" rel="noreferrer">
+              <Button size="lg" className="h-12 px-8 font-semibold bg-green-500 hover:bg-green-600 text-white gap-2">
+                WhatsApp Your Specs
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

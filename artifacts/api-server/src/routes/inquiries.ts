@@ -1,6 +1,7 @@
 import { Router, type IRouter } from "express";
 import { db, inquiriesTable, quotesTable } from "@workspace/db";
 import { SubmitInquiryBody, SubmitQuoteBody } from "@workspace/api-zod";
+import { sendInquiryEmail, sendQuoteEmail } from "../lib/mailer.js";
 
 const router: IRouter = Router();
 
@@ -25,6 +26,10 @@ router.post("/inquiries", async (req, res): Promise<void> => {
     .returning();
 
   req.log.info({ id: inquiry.id }, "Inquiry submitted");
+
+  sendInquiryEmail(parsed.data).catch(err =>
+    req.log.warn({ err }, "Email send failed — inquiry still saved to DB")
+  );
 
   res.status(201).json({
     id: inquiry.id,
@@ -55,6 +60,10 @@ router.post("/inquiries/quote", async (req, res): Promise<void> => {
     .returning();
 
   req.log.info({ id: quote.id }, "Quote request submitted");
+
+  sendQuoteEmail(parsed.data).catch(err =>
+    req.log.warn({ err }, "Email send failed — quote still saved to DB")
+  );
 
   res.status(201).json({
     id: quote.id,
