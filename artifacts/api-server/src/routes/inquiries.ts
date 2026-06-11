@@ -27,9 +27,13 @@ router.post("/inquiries", async (req, res): Promise<void> => {
 
   req.log.info({ id: inquiry.id }, "Inquiry submitted");
 
-  sendInquiryEmail(parsed.data).catch(err =>
-    req.log.warn({ err }, "Email send failed — inquiry still saved to DB")
-  );
+  // Send email — awaited so errors are logged; DB record is already saved so form still succeeds
+  try {
+    await sendInquiryEmail(parsed.data);
+    req.log.info({ id: inquiry.id }, "Inquiry email sent");
+  } catch (err) {
+    req.log.error({ err, id: inquiry.id }, "Inquiry email failed — DB record saved");
+  }
 
   res.status(201).json({
     id: inquiry.id,
@@ -61,9 +65,12 @@ router.post("/inquiries/quote", async (req, res): Promise<void> => {
 
   req.log.info({ id: quote.id }, "Quote request submitted");
 
-  sendQuoteEmail(parsed.data).catch(err =>
-    req.log.warn({ err }, "Email send failed — quote still saved to DB")
-  );
+  try {
+    await sendQuoteEmail(parsed.data);
+    req.log.info({ id: quote.id }, "Quote email sent");
+  } catch (err) {
+    req.log.error({ err, id: quote.id }, "Quote email failed — DB record saved");
+  }
 
   res.status(201).json({
     id: quote.id,

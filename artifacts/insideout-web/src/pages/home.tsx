@@ -22,7 +22,7 @@ import labelRollImg from "@assets/img_rool_1781094388917.png";
 
 const stats = [
   { value: "17+", label: "Product Variants" },
-  { value: "48hr", label: "Order Dispatch" },
+  { value: "Grade A", label: "Barcode Quality" },
   { value: "9+", label: "Industries Served" },
   { value: "100%", label: "QC Certified Stock" },
 ];
@@ -48,7 +48,7 @@ const whyChooseUs = [
   {
     icon: Truck,
     title: "Reliable Pan-India Dispatch",
-    desc: "Standard stock orders leave our facility within 48 hours. We supply to Maharashtra, Gujarat, Karnataka, Delhi, and across India through our established courier network.",
+    desc: "We supply to Maharashtra, Gujarat, Karnataka, Delhi, and across India through our established courier network. Contact us to confirm lead time for your order.",
   },
   {
     icon: FlaskConical,
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     q: "What is the standard lead time for bulk orders?",
-    a: "In-stock standard labels and rolls are dispatched within 24–48 hours. Custom printed labels or special-specification substrates require 3–5 working days. Production-line urgent orders are handled on priority — call us directly for critical requirements.",
+    a: "Lead time depends on order size and specifications. Standard stock items ship quickly; custom printed labels or special substrates require additional production time. Contact us directly for an accurate lead time for your specific requirement.",
   },
   {
     q: "Do your labels perform in cold storage and freezer environments?",
@@ -158,7 +158,7 @@ const processSteps = [
   {
     step: "03",
     title: "Production, Pack and Dispatch",
-    desc: "Confirmed orders go into production immediately. Each roll is inspected, packed dust-free, and dispatched through our pan-India courier network within 48 hours.",
+    desc: "Confirmed orders go into production immediately. Each roll is inspected, packed dust-free, and dispatched through our pan-India courier network.",
   },
 ];
 
@@ -294,7 +294,7 @@ export default function Home() {
               />
               <span className="font-bold text-primary">Inside Out Packaging Industries</span>
               <span className="text-white/60">·</span>
-              <span>Koregaon Bhima, Pune</span>
+              <span>Pune, Maharashtra</span>
             </motion.div>
 
             {/* Main headline — word by word reveal */}
@@ -348,7 +348,7 @@ export default function Home() {
               transition={{ delay: 1.1 }}
               className="text-base md:text-lg text-slate-300 mb-10 max-w-2xl leading-relaxed"
             >
-              High-Quality Barcode Labels, Thermal Transfer Ribbons &amp; Identification Solutions for Manufacturing, Logistics, Retail and Industrial Applications. Every roll quality-checked, scan-tested, and dispatched within 48 hours.
+              High-Quality Barcode Labels, Thermal Transfer Ribbons &amp; Identification Solutions for Manufacturing, Logistics, Retail and Industrial Applications. Every roll quality-checked and scan-tested before it leaves our facility.
             </motion.p>
 
             {/* CTA row */}
@@ -498,8 +498,7 @@ export default function Home() {
                 {[
                   "Substrate-to-ribbon matching advisory — free with every order",
                   "Custom die-cut sizes, core diameter, and wind direction",
-                  "Stock orders dispatched within 48 hours",
-                  "Pan-India delivery via established courier network",
+                  "Fast dispatch via pan-India courier network",
                   "Compatible with all major thermal printer brands",
                 ].map((item, i) => (
                   <motion.li

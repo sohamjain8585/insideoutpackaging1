@@ -97,7 +97,7 @@ export default function About() {
                   Manufacturing Standards That Matter
                 </h2>
                 <p className="text-lg text-slate-600">
-                  The technical pillars that make us the preferred supply partner for industrial procurement teams.
+                  The technical pillars that make us a preferred supply partner for industrial operations teams.
                 </p>
               </div>
               <div className="space-y-6">
@@ -114,8 +114,8 @@ export default function About() {
                   },
                   {
                     icon: Truck,
-                    title: "48-Hour Dispatch Commitment",
-                    desc: "Standard stock orders are packed and dispatched within 48 hours through our established pan-India courier network, from Pune to every production center.",
+                    title: "Pan-India Dispatch Network",
+                    desc: "Orders are packed and dispatched through our established pan-India courier network, from Pune to every production center across Maharashtra and beyond.",
                   },
                   {
                     icon: Users,
