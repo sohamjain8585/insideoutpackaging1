@@ -1,1 +1,2 @@
 - [Gmail app password troubleshooting](gmail-app-password-troubleshooting.md) — 535 auth errors after 'regenerating' password usually mean user pasted regular login password, not App Password
+- [Global custom cursor + Lenis smooth scroll](insideout-web-premium-motion.md) — gate cursor:none behind a JS-added body class, not a blanket CSS media query, or cursor disappears if JS fails

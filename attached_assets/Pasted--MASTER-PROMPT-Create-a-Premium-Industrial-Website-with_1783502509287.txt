@@ -1,0 +1,465 @@
+# MASTER PROMPT — Create a Premium Industrial Website with Modern Animations
+
+Act as a senior UI/UX designer, award-winning frontend developer, motion designer, and performance engineer.
+
+Build a completely original website that captures the premium feel, smooth interactions, and polished motion of a modern industrial B2B website. Do **not** copy source code, images, logos, text, or proprietary assets from any existing website. Recreate only the overall animation quality and user experience.
+
+## Tech Stack
+
+* React + Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* GSAP (ScrollTrigger where appropriate)
+* Lenis smooth scrolling
+* Three.js (optional for subtle background effects)
+* SVG animations
+* Fully responsive
+* Lighthouse Performance 95+
+* WCAG accessibility compliant
+
+---
+
+## Overall Motion Style
+
+The entire experience should feel:
+
+* Premium
+* Fast
+* Smooth
+* Minimal
+* Professional
+* Industrial
+* Modern
+* Confident
+
+Use motion purposefully. Every animation should improve usability rather than distract.
+
+Animation timing:
+
+* Duration: 0.3–0.8 seconds
+* Ease: cubic-bezier(0.22, 1, 0.36, 1)
+* Stagger: 60–120 ms
+* 60 FPS target
+* Hardware-accelerated transforms only
+* Animate opacity and transform instead of layout properties
+
+---
+
+# Page Loading Animation
+
+Create a premium loading sequence.
+
+* Brand logo fades in
+* Thin progress line expands smoothly
+* Background gently transitions
+* Loader disappears with a vertical reveal
+* Hero section fades in naturally
+
+---
+
+# Smooth Scrolling
+
+Implement inertia scrolling using Lenis.
+
+Effects:
+
+* Soft momentum
+* Scroll interpolation
+* No jitter
+* Perfect wheel support
+* Touch optimized
+
+---
+
+# Hero Section Animation
+
+On load:
+
+Headline:
+
+* Fade in
+* Move upward 40 px
+* Slight blur to sharp transition
+
+Subheadline:
+
+* Appears after headline
+* Slight delay
+
+CTA Buttons:
+
+* Scale from 0.9 to 1
+* Fade in
+* Hover lift
+* Animated shadow
+
+Hero Image:
+
+* Scale 1.08 → 1
+* Fade in
+* Floating motion
+* Slight mouse parallax
+
+Background:
+
+Very slow animated gradient
+
+Optional floating particles
+
+---
+
+# Navigation Animation
+
+Navbar starts transparent.
+
+On scroll:
+
+* Glassmorphism
+* Blur backdrop
+* Smooth background transition
+* Logo shrinks slightly
+* Active menu underline animation
+
+Hover:
+
+* Underline grows from center
+* Text color transition
+* Icon rotation where appropriate
+
+Mobile menu:
+
+* Full-screen overlay
+* Stagger menu items
+* Backdrop fade
+* Smooth open/close transitions
+
+---
+
+# Scroll Reveal System
+
+Every section should animate only once.
+
+Elements reveal with:
+
+Opacity:
+0 → 1
+
+Y Position:
+40px → 0
+
+Blur:
+8px → 0
+
+Scale:
+0.98 → 1
+
+Randomized stagger for children.
+
+---
+
+# Cards
+
+Every card:
+
+Hover:
+
+* Lift 12px
+* Soft shadow
+* Border glow
+* Image zoom
+* Icon rotation
+* Smooth background transition
+
+Click:
+
+Tiny press animation
+
+---
+
+# Buttons
+
+Hover:
+
+* Fill animation
+* Arrow slides
+* Icon moves
+* Glow
+* Scale 1.03
+
+Active:
+
+Scale 0.97
+
+Ripple effect optional
+
+---
+
+# Product Section
+
+Grid animation:
+
+Cards appear diagonally.
+
+Hover:
+
+Image zoom
+
+Border highlight
+
+Animated CTA
+
+Specification rows fade sequentially
+
+---
+
+# Statistics Counter
+
+When visible:
+
+Count numbers smoothly.
+
+Progress bars:
+
+Animate left to right.
+
+Icons:
+
+Scale slightly.
+
+---
+
+# Timeline
+
+Vertical animated progress line.
+
+Each milestone:
+
+Fade
+
+Slide
+
+Scale
+
+Connector grows dynamically
+
+---
+
+# Testimonials
+
+Auto sliding carousel.
+
+Cards:
+
+3D hover
+
+Depth
+
+Quote icon animation
+
+Avatar scale
+
+---
+
+# Gallery
+
+Images:
+
+Fade
+
+Zoom
+
+Hover overlay
+
+Parallax scrolling
+
+Lightbox with smooth transitions
+
+---
+
+# Contact Section
+
+Inputs:
+
+Floating labels
+
+Border glow
+
+Validation animation
+
+Submit button:
+
+Loading spinner
+
+Success animation
+
+Checkmark transition
+
+---
+
+# Footer
+
+Reveal from bottom.
+
+Social icons:
+
+Hover bounce
+
+Rotate slightly
+
+Background gradient animation
+
+---
+
+# Cursor Effects
+
+Desktop only.
+
+Custom cursor:
+
+Outer ring
+
+Inner dot
+
+Hover expansion
+
+Magnetic buttons
+
+Interactive cursor states
+
+---
+
+# Micro Interactions
+
+Everything responds smoothly:
+
+Buttons
+
+Cards
+
+Icons
+
+Links
+
+Images
+
+Forms
+
+Navigation
+
+Feature boxes
+
+Accordions
+
+Tabs
+
+Dropdowns
+
+---
+
+# Background Effects
+
+Subtle animated gradient
+
+Very soft moving particles
+
+Large blurred blobs
+
+Glassmorphism sections
+
+No visual clutter
+
+---
+
+# Typography Motion
+
+Headings:
+
+Character stagger
+
+Word stagger
+
+Blur reveal
+
+Paragraphs:
+
+Fade upward
+
+Buttons:
+
+Letter spacing animation
+
+---
+
+# Performance Requirements
+
+Use lazy loading.
+
+Intersection Observer.
+
+GPU transforms.
+
+Code splitting.
+
+Image optimization.
+
+Minimal JavaScript.
+
+Avoid layout shift.
+
+Maintain 60 FPS.
+
+---
+
+# Mobile Animations
+
+Reduce motion complexity.
+
+Disable heavy parallax.
+
+Preserve smooth fades.
+
+Touch interactions should feel native.
+
+---
+
+# Accessibility
+
+Respect prefers-reduced-motion.
+
+Keyboard accessible.
+
+Proper focus states.
+
+ARIA labels.
+
+Semantic HTML.
+
+High contrast.
+
+---
+
+# Color Palette
+
+Primary:
+#0F172A
+
+Accent:
+#2563EB
+
+Secondary:
+#F8FAFC
+
+Border:
+#E2E8F0
+
+Background:
+#FFFFFF
+
+Use subtle gradients and soft shadows.
+
+---
+
+# Desired User Impression
+
+The visitor should immediately feel they are dealing with a premium industrial manufacturer that is modern, reliable, technically advanced, and quality-focused. The animations should be elegant, fluid, and restrained—enhancing the experience without becoming distracting.

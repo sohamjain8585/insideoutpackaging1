@@ -4,6 +4,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
+import { PageLoader } from "@/components/PageLoader";
+import { CustomCursor } from "@/components/CustomCursor";
+import { useLenis } from "@/hooks/use-lenis";
 
 import Home from "@/pages/home";
 import About from "@/pages/about";
@@ -42,9 +45,13 @@ function Router() {
 }
 
 function App() {
+  useLenis();
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <PageLoader />
+        <CustomCursor />
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
           <Router />
         </WouterRouter>

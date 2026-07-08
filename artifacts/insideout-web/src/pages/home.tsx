@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/use-seo";
 import { PRODUCTS, INDUSTRIES } from "@/data/constants";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import {
   ArrowRight, Factory, Globe2, CheckCircle2, ChevronRight,
   Phone, MessageCircle, Zap, Shield, Settings, Truck,
@@ -401,14 +402,9 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center group"
               >
-                <motion.div
-                  className="text-4xl md:text-5xl font-extrabold text-[#0F2747] mb-2"
-                  whileInView={{ scale: [0.8, 1.05, 1] }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  {stat.value}
-                </motion.div>
+                <div className="text-4xl md:text-5xl font-extrabold text-[#0F2747] mb-2">
+                  <AnimatedCounter value={stat.value} />
+                </div>
                 <div className="text-sm font-medium text-slate-500 uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}
