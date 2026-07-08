@@ -38,4 +38,3 @@ externalPort = 3000
 [userenv]
 
 [userenv.shared]
-GMAIL_USER = "SJ.INSIDEOUT@gmail.com"
