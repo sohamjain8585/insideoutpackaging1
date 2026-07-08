@@ -1,0 +1,1 @@
+- [Gmail app password troubleshooting](gmail-app-password-troubleshooting.md) — 535 auth errors after 'regenerating' password usually mean user pasted regular login password, not App Password
