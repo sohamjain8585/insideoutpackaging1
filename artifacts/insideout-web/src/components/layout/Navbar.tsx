@@ -56,15 +56,15 @@ export function Navbar() {
 
       {/* Main Navbar */}
       <header
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b ${
           isScrolled || location !== "/"
-            ? "bg-white/97 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
-            : "bg-white/97 backdrop-blur-md shadow-sm border-b border-gray-100 py-3"
+            ? "bg-white/85 backdrop-blur-xl shadow-md border-gray-100 py-2.5"
+            : "bg-white/60 backdrop-blur-md shadow-none border-transparent py-4"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 z-50" data-testid="link-logo">
-            <img src={logoPng} alt="Inside Out Packaging Industries" className="h-10 md:h-12 w-auto object-contain" />
+          <Link href="/" className="flex items-center gap-2 z-50 transition-transform duration-300 hover:scale-[1.02]" data-testid="link-logo">
+            <img src={logoPng} alt="Inside Out Packaging Industries" className="h-10 md:h-12 w-auto object-contain transition-all duration-300" />
           </Link>
 
           {/* Desktop Nav */}

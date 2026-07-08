@@ -24,21 +24,21 @@ export function Footer() {
                 href="https://wa.me/918530658864"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-green-600/20 p-2.5 rounded-full hover:bg-green-500 transition-colors text-green-400 hover:text-white"
+                className="bg-green-600/20 p-2.5 rounded-full hover:bg-green-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 text-green-400 hover:text-white"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
               </a>
               <a
                 href="mailto:SJ.insideout@gmail.com"
-                className="bg-white/10 p-2.5 rounded-full hover:bg-primary transition-colors text-slate-300 hover:text-white"
+                className="bg-white/10 p-2.5 rounded-full hover:bg-primary hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 text-slate-300 hover:text-white"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a
                 href="tel:8530658864"
-                className="bg-white/10 p-2.5 rounded-full hover:bg-primary transition-colors text-slate-300 hover:text-white"
+                className="bg-white/10 p-2.5 rounded-full hover:bg-primary hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 text-slate-300 hover:text-white"
                 aria-label="Phone"
               >
                 <Phone className="h-5 w-5" />

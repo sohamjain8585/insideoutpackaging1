@@ -450,8 +450,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                whileHover={{ y: -6 }}
-                className="group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-slate-100 cursor-pointer"
+                whileHover={{ y: -8 }}
+                className="group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:border-primary/20 transition-all duration-300 bg-white border border-slate-100 cursor-pointer"
               >
                 <div className="relative h-52 overflow-hidden bg-slate-50 flex items-center justify-center p-4">
                   <img src={cat.image} alt={cat.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
@@ -554,10 +554,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:bg-white/10 hover:border-primary/30 transition-all duration-300 group"
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:bg-white/10 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group"
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-300">
+                <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-5 group-hover:bg-primary group-hover:rotate-6 transition-all duration-300">
                   <item.icon className="h-6 w-6 text-primary group-hover:text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-3">{item.title}</h3>
@@ -584,8 +584,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -4 }}
-                className="group rounded-xl border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col bg-white"
+                whileHover={{ y: -6 }}
+                className="group rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300 flex flex-col bg-white"
                 data-testid={`card-featured-${product.id}`}
               >
                 <div className="aspect-[4/3] bg-white relative overflow-hidden flex items-center justify-center p-4 border-b border-slate-50">
@@ -720,8 +720,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
-                whileHover={{ y: -4 }}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 flex flex-col"
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 flex flex-col"
                 data-testid={`card-testimonial-${i}`}
               >
                 <div className="flex gap-1 mb-5">

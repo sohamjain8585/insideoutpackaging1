@@ -167,7 +167,7 @@ export default function Products() {
                     key={product.id}
                     variants={cardVariants}
                     layout
-                    className="bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+                    className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-2xl hover:border-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col group"
                     data-testid={`card-product-${product.id}`}
                   >
                     {/* Image area */}
