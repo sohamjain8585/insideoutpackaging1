@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 const RECIPIENT = "vardhamanentp01@gmail.com";
 
 function createTransport() {
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
+  const user = process.env.GMAIL_USER?.trim();
+  const pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
   if (!user || !pass) {
     console.warn("[mailer] GMAIL_USER or GMAIL_APP_PASSWORD not set — email disabled");
     return null;
