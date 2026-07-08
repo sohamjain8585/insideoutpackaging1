@@ -92,22 +92,19 @@ const productCategories = [
 const testimonials = [
   {
     name: "Rajesh Sharma",
-    company: "Sharma Logistics Pvt. Ltd., Pune",
-    role: "Procurement Manager",
+    role: "Procurement Manager, Logistics Industry",
     text: "We've been sourcing our shipping labels and billing rolls from Inside Out for our entire fulfillment operation. The adhesive holds perfectly across every carton type — not a single peel in transit. Consistent quality, fast dispatch, and their team actually understands what a logistics operation needs.",
     rating: 5,
   },
   {
     name: "Priya Deshmukh",
-    company: "MedChoice Pharmaceuticals, Nashik",
-    role: "Production Head",
+    role: "Production Head, Pharmaceutical Industry",
     text: "Pharma labeling has zero tolerance for print failure or tamper issues. Inside Out's void labels and resin ribbons have passed every internal QC audit we run. The print stays legible through sterilization cycles — that's not something every supplier can deliver.",
     rating: 5,
   },
   {
     name: "Anil Patil",
-    company: "GreenFresh Foods, Pune",
-    role: "Operations Director",
+    role: "Operations Director, Food Processing Industry",
     text: "Our cold-storage operations need labels that stay bonded and readable at -18°C. Inside Out specified the right adhesive grade and direct thermal material without us even asking — that kind of product knowledge is rare. Zero label failures since we switched.",
     rating: 5,
   },
@@ -736,7 +733,6 @@ export default function Home() {
                 <div className="border-t border-slate-100 pt-5">
                   <div className="font-bold text-[#0F2747]">{t.name}</div>
                   <div className="text-sm text-slate-500">{t.role}</div>
-                  <div className="text-xs font-bold text-primary mt-1">{t.company}</div>
                 </div>
               </motion.div>
             ))}
