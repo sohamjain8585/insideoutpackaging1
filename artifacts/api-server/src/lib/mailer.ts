@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { logger } from "./logger";
 
 const RECIPIENT = "vardhamanentp01@gmail.com";
 
@@ -9,6 +10,10 @@ function createTransport() {
     console.warn("[mailer] GMAIL_USER or GMAIL_APP_PASSWORD not set — email disabled");
     return null;
   }
+  logger.info(
+    { userMasked: user.replace(/(?<=.{2}).(?=.*@)/g, "*"), passLength: pass.length },
+    "[mailer] transport credentials loaded"
+  );
   return nodemailer.createTransport({
     service: "gmail",
     auth: { user, pass },
