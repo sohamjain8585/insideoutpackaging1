@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-const RECIPIENT = "SJ.INSIDEOUT@gmail.com";
+const RECIPIENT = "vardhamanentp01@gmail.com";
 
 function createTransport() {
   const user = process.env.GMAIL_USER;
