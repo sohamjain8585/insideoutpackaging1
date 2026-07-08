@@ -189,7 +189,7 @@ export default function Products() {
                       <h3 className="text-lg font-bold text-[#0F2747] mb-1.5 leading-snug">{product.name}</h3>
                       <p className="text-slate-500 text-sm mb-4 flex-1 leading-relaxed">{product.description}</p>
 
-                      <ul className="space-y-1.5 mb-4">
+                      <ul className="space-y-1.5 mb-5">
                         {product.features.map((feature, idx) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
                             <Check className="h-4 w-4 text-primary shrink-0 mt-0.5" />
@@ -197,17 +197,6 @@ export default function Products() {
                           </li>
                         ))}
                       </ul>
-
-                      {product.specs && (
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 mb-5 bg-slate-50 rounded-lg p-3 border border-slate-100">
-                          {Object.entries(product.specs).map(([label, value], idx) => (
-                            <div key={idx} className="text-xs">
-                              <span className="text-slate-400">{label}: </span>
-                              <span className="text-[#0F2747] font-semibold">{value}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
 
                       <Dialog>
                         <DialogTrigger asChild>
