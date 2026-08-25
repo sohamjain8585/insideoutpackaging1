@@ -55,7 +55,6 @@ export function Footer() {
                 { name: "All Products", href: "/products" },
                 { name: "Applications", href: "/applications" },
                 { name: "Industries Served", href: "/industries" },
-                { name: "Gallery", href: "/gallery" },
                 { name: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>

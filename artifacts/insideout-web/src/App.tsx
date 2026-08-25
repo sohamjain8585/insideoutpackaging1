@@ -13,7 +13,6 @@ import About from "@/pages/about";
 import Products from "@/pages/products";
 import Applications from "@/pages/applications";
 import Industries from "@/pages/industries";
-import Gallery from "@/pages/gallery";
 import Contact from "@/pages/contact";
 
 const queryClient = new QueryClient();
@@ -36,7 +35,6 @@ function Router() {
         <Route path="/products" component={Products} />
         <Route path="/applications" component={Applications} />
         <Route path="/industries" component={Industries} />
-        <Route path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
