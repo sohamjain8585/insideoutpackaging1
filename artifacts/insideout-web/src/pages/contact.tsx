@@ -76,12 +76,13 @@ export default function Contact() {
   return (
     <Layout>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary to-transparent" />
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Contact Us</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <span className="site-eyebrow mb-5">A direct line to the factory</span>
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Contact Us</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Ready to source industrial labels that won't let your operation down? Our team responds within 2–4 business hours.
             </p>
           </motion.div>
@@ -89,7 +90,7 @@ export default function Contact() {
       </section>
 
       {/* Quick Action Bar */}
-      <section className="bg-white border-b border-slate-100 py-5">
+       <section className="bg-[#fbfaf7] border-b border-[#e2e4df] py-5">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="tel:8530658864" data-testid="link-contact-call">
@@ -112,13 +113,13 @@ export default function Contact() {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-slate-50">
+       <section className="py-20 surface-grid">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
             {/* Contact Info */}
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} className="lg:col-span-1 space-y-5">
-              <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+               <div className="industrial-card bg-[#fbfaf7] p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-[#0F2747] mb-6">Get in Touch</h3>
                 <div className="space-y-6">
                   {contactInfo.map((item, i) => (

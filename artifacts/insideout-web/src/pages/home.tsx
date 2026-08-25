@@ -199,12 +199,13 @@ export default function Home() {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="relative min-h-[95vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[calc(100dvh-42px)] flex items-center overflow-hidden">
         {/* Background image + overlay */}
         <div className="absolute inset-0 z-0">
           <img src={heroImg} alt="Warehouse labeling operations" className="w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-[#0F2747]/85" />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0F2747] via-[#0F2747]/60 to-[#0a1e3d]/90" />
+           <div className="absolute inset-0 bg-[#0b1a2f]/90" />
+           <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a2f]/95 via-[#0f2747]/80 to-[#071120]/95" />
+           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.95)_0%,rgba(7,17,32,.72)_42%,rgba(7,17,32,.42)_100%)]" />
         </div>
 
         {/* Floating animated particles */}
@@ -222,7 +223,7 @@ export default function Home() {
               transition={{
                 duration: p.duration,
                 delay: p.delay,
-                repeat: Infinity,
+                 repeat: 0,
                 ease: "easeInOut",
               }}
             />
@@ -232,13 +233,13 @@ export default function Home() {
             className="absolute w-96 h-96 rounded-full bg-primary/10 blur-3xl"
             style={{ right: "5%", top: "10%" }}
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+             transition={{ duration: 5, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute w-64 h-64 rounded-full bg-blue-400/10 blur-3xl"
             style={{ left: "5%", bottom: "15%" }}
             animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
-            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+             transition={{ duration: 7, ease: "easeInOut", delay: 2 }}
           />
         </div>
 
@@ -258,7 +259,7 @@ export default function Home() {
             >
               <motion.div
                 animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 3 + i, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+                 transition={{ duration: 3 + i, ease: "easeInOut", delay: i * 0.5 }}
               >
                 <div className="text-xs text-primary font-bold uppercase tracking-wider mb-1">{card.label}</div>
                 <div className="text-white text-sm font-medium">{card.spec}</div>
@@ -305,7 +306,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.2 + li * 0.2 }}
                 >
                   <span
-                    className={`block text-4xl md:text-6xl font-extrabold leading-tight tracking-tight ${
+                     className={`block text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-[-.055em] ${
                       li === 1 ? "text-primary" : "text-white"
                     }`}
                   >
@@ -390,7 +391,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats ── */}
-      <section className="bg-white py-14 border-b border-gray-100">
+       <section className="bg-[#fbfaf7] py-14 border-b border-[#e2e4df]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -413,13 +414,11 @@ export default function Home() {
       </section>
 
       {/* ── Trust Badge Strip ── */}
-      <section className="bg-[#0F2747] py-5 overflow-hidden">
+       <section className="bg-[#111f36] py-5 overflow-hidden">
         <motion.div
-          className="flex gap-12 whitespace-nowrap"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+          className="container mx-auto flex flex-wrap justify-center gap-x-10 gap-y-3"
         >
-          {[...trustBadges, ...trustBadges].map((badge, i) => (
+          {trustBadges.map((badge, i) => (
             <div key={i} className="inline-flex items-center gap-2 text-slate-300 text-sm flex-shrink-0 px-4">
               <badge.icon className="h-4 w-4 text-primary flex-shrink-0" />
               <span>{badge.label}</span>
@@ -429,7 +428,7 @@ export default function Home() {
       </section>
 
       {/* ── Product Categories ── */}
-      <section className="py-20 bg-slate-50">
+       <section className="py-20 surface-grid">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
@@ -447,7 +446,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
                 whileHover={{ y: -8 }}
-                className="group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:border-primary/20 transition-all duration-300 bg-white border border-slate-100 cursor-pointer"
+                 className="industrial-card group rounded-2xl overflow-hidden cursor-pointer"
               >
                 <div className="relative h-52 overflow-hidden bg-slate-50 flex items-center justify-center p-4">
                   <img src={cat.image} alt={cat.name} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />

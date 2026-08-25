@@ -4,9 +4,9 @@ import { WhatsAppButton } from "./WhatsAppButton";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-[100dvh] flex flex-col bg-background">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 overflow-hidden">
         {children}
       </main>
       <Footer />

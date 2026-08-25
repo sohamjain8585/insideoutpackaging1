@@ -50,7 +50,7 @@ export default function Products() {
   return (
     <Layout>
       {/* Page Header */}
-      <section className="pt-32 pb-20 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[120px] translate-x-1/2 -translate-y-1/2" />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-primary/5 blur-[80px] translate-y-1/2 -translate-x-1/2" />
@@ -62,11 +62,11 @@ export default function Products() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-4">
+             <span className="site-eyebrow mb-5">
               17 Product Variants
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Product Catalog</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Product Catalog</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Industrial-grade thermal printing consumables — labels, ribbons, and rolls engineered to spec.
             </p>
           </motion.div>
@@ -93,7 +93,7 @@ export default function Products() {
       </section>
 
       {/* Category Icon Strip */}
-      <section className="py-10 bg-white border-b border-slate-100">
+      <section className="py-10 bg-[#fbfaf7] border-b border-[#e2e4df]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
             {categoryIcons.map((cat, i) => (
@@ -121,7 +121,7 @@ export default function Products() {
       </section>
 
       {/* Products Grid */}
-      <section id="products-grid" className="py-16 bg-slate-50 min-h-screen">
+      <section id="products-grid" className="py-16 surface-grid min-h-screen">
         <div className="container mx-auto px-4 md:px-6">
 
           {/* Filters */}
@@ -167,7 +167,7 @@ export default function Products() {
                     key={product.id}
                     variants={cardVariants}
                     layout
-                    className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-2xl hover:border-primary/20 hover:-translate-y-1 transition-all duration-300 flex flex-col group"
+                     className="industrial-card rounded-2xl overflow-hidden flex flex-col group"
                     data-testid={`card-product-${product.id}`}
                   >
                     {/* Image area */}

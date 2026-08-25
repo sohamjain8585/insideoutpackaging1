@@ -91,19 +91,20 @@ export default function Gallery() {
 
   return (
     <Layout>
-      <section className="pt-32 pb-16 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary to-transparent" />
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Product Gallery</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <span className="site-eyebrow mb-5">Inside Out in the field</span>
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Product Gallery</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               A visual reference of our labels, ribbons, POS rolls, and compatible printing equipment.
             </p>
           </motion.div>
         </div>
       </section>
 
-      <section className="py-16 bg-slate-50">
+       <section className="py-16 surface-grid">
         <div className="container mx-auto px-4 md:px-6 space-y-14">
 
           {/* Full-width warehouse hero */}
@@ -147,7 +148,7 @@ export default function Gallery() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`rounded-2xl overflow-hidden shadow-md group relative border border-slate-100 ${img.bg}`}
+                   className={`industrial-card rounded-2xl overflow-hidden group relative ${img.bg}`}
                 >
                   <div className="h-56 md:h-64 flex items-center justify-center overflow-hidden">
                     <img
@@ -179,7 +180,7 @@ export default function Gallery() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`rounded-2xl overflow-hidden shadow-md group relative border border-slate-100 ${img.bg}`}
+                   className={`industrial-card rounded-2xl overflow-hidden group relative ${img.bg}`}
                 >
                   <div className="h-64 md:h-72 flex items-center justify-center overflow-hidden">
                     <img
@@ -239,7 +240,7 @@ export default function Gallery() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                   className="industrial-card bg-[#fbfaf7] rounded-2xl overflow-hidden"
                   data-testid={`card-equipment-${i}`}
                 >
                   <div className="bg-[#0F2747] px-6 py-4">

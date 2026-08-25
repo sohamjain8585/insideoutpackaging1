@@ -15,15 +15,15 @@ export default function About() {
   return (
     <Layout>
       {/* Page Header */}
-      <section className="pt-32 pb-16 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary to-transparent" />
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-4">
+             <span className="site-eyebrow mb-5">
               Koregaon Bhima, Pune
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Our Story</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Our Story</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Building the foundations of modern supply chains through precision printing and unyielding quality.
             </p>
           </motion.div>
@@ -69,7 +69,7 @@ export default function About() {
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="bg-slate-50 p-10 rounded-2xl border border-slate-100 relative overflow-hidden">
+               className="industrial-card bg-[#f5f4ef] p-10 rounded-2xl relative overflow-hidden">
               <Target className="h-14 w-14 text-primary mb-6 opacity-80" />
               <h3 className="text-2xl font-bold text-[#0F2747] mb-4">Our Mission</h3>
               <p className="text-slate-600 leading-relaxed text-lg">
@@ -78,7 +78,7 @@ export default function About() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-              className="bg-[#0F2747] text-white p-10 rounded-2xl relative overflow-hidden shadow-xl">
+               className="bg-[#111f36] text-white p-10 rounded-2xl relative overflow-hidden shadow-xl">
               <Eye className="h-14 w-14 text-primary mb-6 opacity-80" />
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-slate-300 leading-relaxed text-lg">
@@ -150,7 +150,7 @@ export default function About() {
           </div>
 
           {/* Capabilities Grid */}
-          <div className="bg-[#0F2747] rounded-2xl p-10 text-white">
+           <div className="bg-[#111f36] rounded-2xl p-10 text-white shadow-[0_18px_48px_rgba(17,31,54,.16)]">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">What We Manufacture</h2>
               <p className="text-slate-300">A complete range of thermal printing consumables for every industrial requirement.</p>

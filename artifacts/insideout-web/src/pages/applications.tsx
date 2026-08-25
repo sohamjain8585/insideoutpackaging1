@@ -228,7 +228,7 @@ function ApplicationCard({ app, i }: { app: typeof applicationsData[0]; i: numbe
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="w-full lg:w-5/12"
       >
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl group">
+        <div className="industrial-card relative rounded-2xl overflow-hidden group">
           {/* accent gradient top border */}
           <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${app.accent} z-10`} />
           <div className={`h-72 md:h-80 ${app.imageBg} relative overflow-hidden`}>
@@ -311,7 +311,7 @@ export default function Applications() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 pointer-events-none">
           <motion.div
             className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[100px]"
@@ -331,11 +331,11 @@ export default function Applications() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-5">
+             <span className="site-eyebrow mb-5">
               7 Core Applications
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-5">Applications &amp; Use Cases</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Applications &amp; Use Cases</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Where our labels, ribbons, and rolls are deployed — real operations, real requirements, real technical specifications.
             </p>
           </motion.div>
@@ -361,7 +361,7 @@ export default function Applications() {
       </section>
 
       {/* Application Sections */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#fbfaf7]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="space-y-28">
             {applicationsData.map((app, i) => (
@@ -381,7 +381,7 @@ export default function Applications() {
       </section>
 
       {/* Compatible Printers */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 surface-grid">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -407,7 +407,7 @@ export default function Applications() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -4 }}
-                className={`rounded-2xl border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 ${printer.color}`}
+                className={`industrial-card rounded-2xl border overflow-hidden ${printer.color}`}
                 data-testid={`card-printer-${i}`}
               >
                 <div className={`${printer.headerColor} px-6 py-4 flex items-center gap-3`}>

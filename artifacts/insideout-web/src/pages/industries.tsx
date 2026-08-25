@@ -93,15 +93,15 @@ export default function Industries() {
   return (
     <Layout>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-[#0F2747] text-white relative overflow-hidden">
+      <section className="page-hero pt-32 pb-20 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/20 to-transparent opacity-50" />
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block px-4 py-1.5 bg-primary/20 text-primary font-bold rounded-full text-sm uppercase tracking-wider mb-4">
+             <span className="site-eyebrow mb-5">
               9 Industry Verticals
             </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Industries We Serve</h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+             <h1 className="text-5xl md:text-6xl font-extrabold tracking-[-.04em] mb-5">Industries We Serve</h1>
+             <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
               Precision labeling solutions engineered for every sector — from factory floor to pharmacy shelf.
             </p>
           </motion.div>
@@ -119,10 +119,10 @@ export default function Industries() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className={`grid grid-cols-1 lg:grid-cols-5 gap-8 items-start rounded-2xl border border-slate-100 shadow-sm overflow-hidden ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
+                 className={`industrial-card grid grid-cols-1 lg:grid-cols-5 gap-8 items-start rounded-2xl overflow-hidden ${i % 2 !== 0 ? "lg:flex-row-reverse" : ""}`}
               >
                 {/* Left/Header Panel */}
-                <div className={`lg:col-span-2 p-8 flex flex-col justify-center h-full bg-[#0F2747] text-white`}>
+                  <div className={`lg:col-span-2 p-8 flex flex-col justify-center h-full bg-[#111f36] text-white`}>
                   <div className={`h-14 w-14 rounded-xl flex items-center justify-center mb-6 bg-white/10`}>
                     <ind.icon className="h-7 w-7 text-primary" />
                   </div>
@@ -168,7 +168,7 @@ export default function Industries() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-[#0F2747] text-white text-center">
+       <section className="py-20 bg-[#111f36] text-white text-center">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Don't See Your Industry?</h2>
           <p className="text-slate-300 text-lg mb-8">

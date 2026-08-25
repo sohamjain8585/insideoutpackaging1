@@ -7,16 +7,16 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0F2747] text-slate-300 pt-16 pb-8 border-t-4 border-primary">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-[#111f36] text-slate-300 pt-16 pb-8 border-t-2 border-primary">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.35fr_.8fr_1fr_1.2fr] gap-10 lg:gap-14 mb-14">
 
           {/* Brand */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block bg-white p-4 rounded-md w-fit">
-              <img src={logoPng} alt="Inside Out Packaging Industries" className="h-12 w-auto object-contain" />
+            <Link href="/" className="inline-block bg-[#fbfaf7] p-3 rounded-lg w-fit">
+              <img src={logoPng} alt="Inside Out Packaging Industries" className="h-11 w-auto object-contain" />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-400 text-[13px] leading-relaxed max-w-sm">
               Manufacturer and supplier of barcode labels, thermal transfer ribbons, billing rolls, and POS rolls. Based in Koregaon Bhima, Pune — supplying industrial operations across India.
             </p>
             <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-6">Quick Links</h3>
+            <h3 className="text-white text-sm font-bold uppercase tracking-[.14em] mb-6">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               {[
                 { name: "About Us", href: "/about" },
@@ -73,7 +73,7 @@ export function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-6">Our Products</h3>
+            <h3 className="text-white text-sm font-bold uppercase tracking-[.14em] mb-6">Our Products</h3>
             <ul className="flex flex-col gap-3">
               {PRODUCTS.slice(0, 6).map((product) => (
                 <li key={product.id}>
@@ -91,7 +91,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-6">Contact Us</h3>
+            <h3 className="text-white text-sm font-bold uppercase tracking-[.14em] mb-6">Contact Us</h3>
             <ul className="flex flex-col gap-5">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -131,7 +131,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        <div className="border-t border-white/10 pt-7 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} Inside Out Packaging Industries. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span>ISO-Grade Quality Process</span>

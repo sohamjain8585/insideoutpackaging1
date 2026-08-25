@@ -1,0 +1,325 @@
+Act as a Senior Product Designer, Award-Winning UI/UX Designer, Frontend Architect, and Motion Designer.
+
+Your mission is to redesign my entire website into a world-class premium SaaS website.
+
+Design Philosophy:
+• Apple-level minimalism
+• Stripe-level professionalism
+• Linear.app smoothness
+• Framer-quality animations
+• Vercel clean layouts
+• Notion typography
+• Premium enterprise feel
+
+====================================================
+
+UI REQUIREMENTS
+
+Use an 8px spacing system.
+
+Maximum content width:
+1280-1400px
+
+Rounded corners:
+16px
+24px for hero cards
+
+Glassmorphism only where appropriate.
+Avoid excessive blur.
+
+Color palette:
+Primary:
+#0F172A
+
+Accent:
+#2563EB
+
+Secondary Accent:
+#06B6D4
+
+Success:
+#22C55E
+
+Background:
+#FFFFFF
+#F8FAFC
+#F1F5F9
+
+Text:
+#0F172A
+#334155
+#64748B
+
+Border:
+#E2E8F0
+
+Typography:
+Inter
+or
+Geist
+
+Hero Heading:
+64-72px
+
+Section Heading:
+48px
+
+Body:
+18px
+
+Buttons:
+Height 52px
+Large border radius
+Subtle shadow
+
+Cards:
+Soft shadow
+Hover elevation
+Hover border glow
+
+====================================================
+
+ANIMATIONS
+
+Use Framer Motion.
+
+Entire page should feel alive.
+
+Hero
+
+• Fade Up
+• Blur to sharp
+• Scale 0.95 → 1
+• Stagger children
+
+Navbar
+
+• Blur on scroll
+• Background transition
+• Smooth sticky animation
+
+Buttons
+
+• Scale 1.05 on hover
+• Scale 0.98 on click
+• Animated arrow movement
+
+Cards
+
+Hover:
+• Lift 10px
+• Shadow increase
+• Border glow
+• Image zoom 1.05
+• Icon rotation
+
+Images
+
+Parallax scrolling
+
+Mouse movement
+
+Floating animation
+
+Text
+
+Character reveal
+
+Word reveal
+
+Gradient animation
+
+Section transitions
+
+Intersection Observer
+
+Fade
+
+Slide
+
+Scale
+
+Stagger
+
+Counters
+
+Animated counting
+
+Progress bars
+
+Smooth fill animation
+
+Icons
+
+Rotate
+
+Bounce
+
+Morph
+
+Background
+
+Animated gradient
+
+Moving blobs
+
+Noise texture
+
+Cursor glow
+
+Footer
+
+Fade upward
+
+Social icons bounce
+
+====================================================
+
+MICRO INTERACTIONS
+
+Hover effects everywhere
+
+Ripple buttons
+
+Magnetic buttons
+
+Smooth scrolling
+
+Cursor follower
+
+Image tilt
+
+Animated underline
+
+Input focus glow
+
+Floating labels
+
+Loading skeletons
+
+Success animations
+
+====================================================
+
+COMPONENTS
+
+Premium Navbar
+
+Mega menu
+
+CTA button
+
+Search
+
+Dark mode toggle
+
+Hero
+
+Large typography
+
+Animated illustration
+
+Floating cards
+
+Statistics
+
+CTA
+
+Client logos
+
+Feature cards
+
+Timeline
+
+Testimonials
+
+FAQ
+
+Pricing
+
+Contact
+
+Footer
+
+====================================================
+
+SCROLL EXPERIENCE
+
+Every section must animate only once.
+
+No sudden appearance.
+
+Smooth easing.
+
+Natural timing.
+
+Parallax backgrounds.
+
+Sticky elements where appropriate.
+
+====================================================
+
+PERFORMANCE
+
+Maintain 90+ Lighthouse score.
+
+Lazy loading
+
+Image optimization
+
+Code splitting
+
+GPU-accelerated animations
+
+Avoid layout shift.
+
+====================================================
+
+RESPONSIVE
+
+Desktop
+
+Laptop
+
+Tablet
+
+Mobile
+
+No overflow.
+
+Perfect spacing.
+
+Responsive typography.
+
+====================================================
+
+CODE QUALITY
+
+Reusable React components.
+
+Clean architecture.
+
+Semantic HTML.
+
+Accessible.
+
+Modern CSS.
+
+Tailwind CSS.
+
+Framer Motion.
+
+No unnecessary libraries.
+
+====================================================
+
+FINAL GOAL
+
+When users open the website, it should immediately feel like a premium product built by a multi-million-dollar startup.
+
+Every animation must be smooth.
+Every spacing must be consistent.
+Every section should feel intentional.
+The website should be visually impressive without being flashy.
+
+Refactor the entire UI while preserving all existing functionality.

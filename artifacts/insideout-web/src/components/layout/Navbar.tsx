@@ -31,50 +31,51 @@ export function Navbar() {
   return (
     <>
       {/* Top Contact Bar */}
-      <div className="hidden lg:block bg-[#0F2747] text-white text-xs py-2 z-50 relative">
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="hidden lg:block bg-[#111f36] text-white text-[11px] py-2.5 z-50 relative border-b border-white/10">
+        <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="flex items-center gap-2 text-slate-300">
               <Phone className="h-3 w-3 text-primary" />
               <a href="tel:8530658864" className="hover:text-white transition-colors">+91 8530658864</a>
             </span>
-            <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="flex items-center gap-2 text-slate-300">
               <Mail className="h-3 w-3 text-primary" />
               <a href="mailto:SJ.insideout@gmail.com" className="hover:text-white transition-colors">SJ.insideout@gmail.com</a>
             </span>
-            <span className="flex items-center gap-1.5 text-slate-300">
+              <span className="flex items-center gap-2 text-slate-300">
               <MessageCircle className="h-3 w-3 text-green-400" />
               <a href="https://wa.me/918530658864" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">WhatsApp Us</a>
             </span>
           </div>
           <div className="flex items-center gap-6 text-slate-300">
             <span>Mon - Sat: 9:00 AM - 6:00 PM IST</span>
-            <span className="bg-primary/20 text-primary px-2 py-0.5 rounded font-medium">Maharashtra, India</span>
+             <span className="bg-primary/15 text-primary px-2.5 py-1 rounded-sm font-mono font-bold tracking-wide">MAHARASHTRA, INDIA</span>
           </div>
         </div>
       </div>
 
       {/* Main Navbar */}
       <header
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b ${
+          className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b ${
           isScrolled || location !== "/"
-            ? "bg-white/85 backdrop-blur-xl shadow-md border-gray-100 py-2.5"
-            : "bg-white/60 backdrop-blur-md shadow-none border-transparent py-4"
+             ? "bg-[#fbfaf7]/95 backdrop-blur-md shadow-[0_10px_28px_rgba(17,31,54,.08)] border-[#dfe2e0] py-2.5"
+             : "bg-[#fbfaf7]/90 backdrop-blur-md shadow-none border-transparent py-4"
         }`}
       >
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 z-50 transition-transform duration-300 hover:scale-[1.02]" data-testid="link-logo">
-            <img src={logoPng} alt="Inside Out Packaging Industries" className="h-10 md:h-12 w-auto object-contain transition-all duration-300" />
+        <div className="container mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 z-50 transition-transform duration-300 hover:scale-[1.02]" data-testid="link-logo">
+            <img src={logoPng} alt="Inside Out Packaging Industries" className="h-9 md:h-11 w-auto object-contain transition-all duration-300" />
+            <span className="hidden xl:block pl-3 border-l border-[#dfe2e0] text-[10px] leading-tight font-mono font-bold tracking-[.16em] text-[#111f36] uppercase">Industrial<br />Identification</span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                   className={`text-[13px] font-semibold transition-colors hover:text-primary relative group ${
                     location === link.href
                       ? "text-primary font-semibold"
                       : "text-slate-700"
@@ -86,17 +87,12 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-            <div className="flex items-center gap-3 border-l border-slate-200 pl-6">
-              <a href="tel:8530658864" data-testid="link-nav-call">
-                <Button size="sm" variant="outline" className="text-[#0F2747] border-[#0F2747] hover:bg-[#0F2747] hover:text-white font-semibold gap-2">
-                  <Phone className="h-3.5 w-3.5" />
-                  Call Now
-                </Button>
+            <div className="flex items-center gap-3 border-l border-[#dfe2e0] pl-5">
+              <a href="tel:8530658864" data-testid="link-nav-call" className="inline-flex items-center gap-2 rounded-lg border border-[#111f36] px-3 py-2 text-xs font-bold text-[#111f36] transition-colors hover:bg-[#111f36] hover:text-white">
+                <Phone className="h-3.5 w-3.5" /> Call Now
               </a>
-              <Link href="/contact" data-testid="button-nav-quote">
-                <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-semibold">
-                  Get Free Quote
-                </Button>
+              <Link href="/contact" data-testid="button-nav-quote" className="inline-flex items-center rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white shadow-[0_7px_18px_rgba(239,111,35,.22)] transition-all hover:-translate-y-0.5 hover:bg-[#d95f19]">
+                Get Free Quote
               </Link>
             </div>
           </nav>
