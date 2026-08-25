@@ -58,7 +58,7 @@ export default function About() {
                 Inside Out Packaging Industries is a dedicated manufacturer and supplier of thermal barcode labels, thermal transfer ribbons, billing rolls, and POS rolls. Our facility is based in Koregaon Bhima, Pune — strategically located to serve Maharashtra's dense industrial and logistics belt.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Under the leadership of <strong className="text-[#0F2747]">Er. Soham Sanjay Jain</strong>, we focus entirely on the intersection of manufacturing precision and supply chain reliability. When a label fails, a package is misrouted, a production line stops, or a retail checkout halts. We engineer our products so that never happens on your watch.
+                We focus entirely on the intersection of manufacturing precision and supply chain reliability. When a label fails, a package is misrouted, a production line stops, or a retail checkout halts. We engineer our products so that never happens on your watch.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
                 From high-tack asset labels for extreme-environment machinery to millions of POS rolls for multi-branch retail chains, our facility is equipped to handle volume orders without compromising on microscopic accuracy — core tolerances, adhesive peel strength, and barcode grade are verified on every batch.

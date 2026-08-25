@@ -13,7 +13,6 @@ const contactInfo = [
     label: "Phone",
     content: (
       <>
-        <p className="text-slate-600 mb-1 text-sm">Er. Soham Sanjay Jain</p>
         <a href="tel:8530658864" className="text-primary hover:underline font-semibold text-lg block">+91 8530658864</a>
       </>
     ),

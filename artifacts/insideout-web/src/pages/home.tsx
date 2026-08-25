@@ -485,7 +485,7 @@ export default function Home() {
                 Inside Out Packaging Industries is a specialized manufacturer and supplier of thermal labels, thermal transfer ribbons, and POS rolls based in Koregaon Bhima, Pune. We serve production managers, operations heads, and supply chain teams who need dependable consumables — not excuses.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Under the leadership of <strong className="text-[#0F2747]">Er. Soham Sanjay Jain</strong>, our facility manufactures to tight tolerances with multi-stage quality verification. Whether you need 2,000 custom barcode labels or 50,000 POS rolls for a retail chain, we treat every order with the same technical rigour.
+                Our facility manufactures to tight tolerances with multi-stage quality verification. Whether you need 2,000 custom barcode labels or 50,000 POS rolls for a retail chain, we treat every order with the same technical rigour.
               </p>
               <ul className="space-y-3 pt-2">
                 {[
@@ -779,7 +779,7 @@ export default function Home() {
             <p className="text-slate-500 mb-4">Have a technical question not answered here?</p>
             <a href="tel:8530658864">
               <Button variant="outline" className="gap-2 border-[#0F2747] text-[#0F2747] hover:bg-[#0F2747] hover:text-white">
-                <Phone className="h-4 w-4" /> Speak to Er. Soham Jain — +91 8530658864
+                <Phone className="h-4 w-4" /> Speak to our team — +91 8530658864
               </Button>
             </a>
           </div>
@@ -802,7 +802,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">Ready to Source Industrial Labels That Won't Let You Down?</h2>
             <p className="text-xl text-white/90 mb-3 max-w-2xl mx-auto">Get a customized quote with substrate recommendations, pricing, and lead time — within 2 to 4 business hours.</p>
-            <p className="text-white/70 mb-10 text-sm">Er. Soham Sanjay Jain &nbsp;·&nbsp; +91 8530658864 &nbsp;·&nbsp; SJ.insideout@gmail.com &nbsp;·&nbsp; Koregaon Bhima, Pune 412216</p>
+            <p className="text-white/70 mb-10 text-sm">+91 8530658864 &nbsp;·&nbsp; SJ.insideout@gmail.com &nbsp;·&nbsp; Koregaon Bhima, Pune 412216</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/contact">
                 <Button size="lg" className="h-14 px-8 text-lg font-bold bg-[#0F2747] text-white hover:bg-[#0F2747]/90">

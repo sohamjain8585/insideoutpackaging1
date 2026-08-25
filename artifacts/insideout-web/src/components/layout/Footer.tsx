@@ -105,7 +105,6 @@ export function Footer() {
               <li className="flex items-start gap-3 text-sm">
                 <Phone className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <span className="block text-slate-400 mb-0.5">Er. Soham Sanjay Jain</span>
                   <a href="tel:8530658864" className="hover:text-white transition-colors font-medium">
                     +91 8530658864
                   </a>
