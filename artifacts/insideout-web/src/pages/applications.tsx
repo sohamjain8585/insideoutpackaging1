@@ -16,7 +16,7 @@ import posRollsImg from "@assets/WhatsApp_Image_2026-01-09_at_11.00.09_AM_178109
 
 const applicationsData = [
   {
-    tag: "Application 01",
+    tag: "Retail & Product Labels",
     title: "Retail Shelf & Product Price Labeling",
     image: barcodeLabelsImg,
     imageStyle: "object-contain p-8",
@@ -31,7 +31,7 @@ const applicationsData = [
     products: ["Barcode Labels", "Semi Gloss Labels", "Direct Thermal Labels"],
   },
   {
-    tag: "Application 02",
+    tag: "Warehouse Inventory Labels",
     title: "Warehouse Bin, Rack & Inventory Labeling",
     image: warehouseImg,
     imageStyle: "object-cover object-center",
@@ -46,7 +46,7 @@ const applicationsData = [
     products: ["Barcode Labels", "Shipping Labels", "Asset Labels"],
   },
   {
-    tag: "Application 03",
+    tag: "E-Commerce Dispatch Labels",
     title: "E-Commerce & Courier Dispatch Labels",
     image: logisticsImg,
     imageStyle: "object-cover object-center",
@@ -61,7 +61,7 @@ const applicationsData = [
     products: ["Shipping Labels", "Direct Thermal Labels", "Thermal Transfer Ribbons"],
   },
   {
-    tag: "Application 04",
+    tag: "Pharma Compliance Labels",
     title: "Pharmaceutical Batch & Compliance Labeling",
     image: labelRollImg,
     imageStyle: "object-contain p-8",
@@ -76,7 +76,7 @@ const applicationsData = [
     products: ["Void Labels", "PET Labels", "Resin Ribbons", "Barcode Labels"],
   },
   {
-    tag: "Application 05",
+    tag: "POS Billing Rolls",
     title: "POS Billing & Receipt Printing",
     image: posRollsImg,
     imageStyle: "object-contain p-6",
@@ -91,7 +91,7 @@ const applicationsData = [
     products: ["POS Rolls", "Thermal Paper Rolls", "Billing Rolls"],
   },
   {
-    tag: "Application 06",
+    tag: "Thermal Transfer Ribbons",
     title: "Thermal Transfer Ribbon Printing",
     image: ribbonsImg,
     imageStyle: "object-contain p-8",
@@ -106,7 +106,7 @@ const applicationsData = [
     products: ["Wax Ribbon", "Wax Resin Ribbon", "Resin Ribbon", "Thermal Transfer Ribbon"],
   },
   {
-    tag: "Application 07",
+    tag: "Manufacturing Asset Tracking",
     title: "Manufacturing Floor & Asset Tracking",
     image: colorRibbonsImg,
     imageStyle: "object-contain p-6",
@@ -353,7 +353,7 @@ export default function Applications() {
                 href={`#app-${i}`}
                 className="bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
               >
-                {app.tag.replace("Application ", "App ")}
+                {app.tag}
               </a>
             ))}
           </motion.div>
