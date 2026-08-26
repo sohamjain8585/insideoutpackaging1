@@ -1,0 +1,27 @@
+Perform a full audit and fix pass on the Inside Out Packaging Industries website. Apply all of the following fixes across every relevant page (Home, About, Products, Applications, Industries, Contact) — not just where first noticed:
+
+1. Fix duplicated/ghosted text on scroll animations (highest priority)
+Several headings and buttons render as double/overlapping text when they scroll into view. Reproduced on: the "What Sets Inside Out Apart" heading (Home), the "Get Custom Quote" and "WhatsApp Your Specs" buttons (Products), the footer column headings "Quick Links" / "Our Products" / "Contact Us" (appears on Home, Products, Applications), and the "E-Commerce" card title (Industries). Inspect the scroll-reveal/fade-in animation logic for duplicate DOM nodes, animation classes firing twice, or mistimed CSS transitions causing a visible double-render. Fix the root cause site-wide and verify it's gone on every page, not just the one it's tested on.
+
+2. Fix low-contrast, hard-to-read text
+
+About page: the bullet list (Static Labels, Void/Security Labels, Shipping Labels, Product Labels) is dark-gray text on a near-black background — change to a light, readable color.
+Applications page: body paragraph text under each product category (e.g. under "Retail Shelf & Product Price Labeling") is light-gray on white — darken to meet WCAG AA contrast (4.5:1 minimum).
+Audit all pages for any other text/background combination under this contrast threshold and fix them too.
+
+3. Fix inconsistent section background rhythm
+The homepage currently switches unpredictably between dark and light sections (hero → dark feature section → light catalog → light testimonials → dark footer). Restructure so dark/light sections alternate in a clear, intentional, consistent pattern.
+
+4. Fix the top utility bar
+The strip showing phone number, email, WhatsApp link, and business hours ("Mon–Sat 9AM–6PM") overlaps or gets truncated on Products, Applications, and Contact pages. Make it fully responsive at common laptop and tablet widths (768px–1440px) with no overlapping or cut-off text.
+
+5. Fix the Applications page category tab menu
+The horizontal tabs (Retail & Product Labels, Warehouse Inventory Labels, E-Commerce Shipment Labels, Pharma Compliance Labels, POS Billing Rolls, Thermal Transfer Ribbons, Manufacturing Asset Tracking) are cramped into one small-font row. Redesign as a wrapping grid, scrollable tab strip, or dropdown/accordion on narrower viewports, and increase font size for legibility.
+
+6. Replace placeholder SEO/meta tags
+Current meta description, og:description, and twitter:description all show the unedited Replit default: "Inside Out Packaging Industries — built on Replit. Update this description to reflect the app." Replace with real copy (under 160 characters) describing the business: manufacturer and supplier of barcode labels, thermal transfer ribbons, and identification solutions for Pharma, Logistics, Retail, and Manufacturing industries, based in Koregaon Bhima, Pune, Maharashtra. Add a proper og:image (1200x630px) showing the product or logo, and ensure a favicon is set.
+
+7. Final check
+After all fixes, re-test scroll behavior on every page to confirm no ghosting remains, run a Lighthouse audit (Performance, Accessibility, SEO), and resolve any remaining warnings — especially color contrast and mobile responsiveness at 375px, 768px, and 1280px widths.
+
+Go through each fix in order, and confirm each one is resolved on all pages where it appears before moving to the next.

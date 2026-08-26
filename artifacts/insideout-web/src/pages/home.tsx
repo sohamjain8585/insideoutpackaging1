@@ -206,6 +206,13 @@ export default function Home() {
            <div className="absolute inset-0 bg-[#0b1a2f]/90" />
            <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a2f]/95 via-[#0f2747]/80 to-[#071120]/95" />
            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.95)_0%,rgba(7,17,32,.72)_42%,rgba(7,17,32,.42)_100%)]" />
+           <img
+             src={barcodeLabelsImg}
+             alt=""
+             aria-hidden="true"
+             className="absolute right-[-8%] top-[8%] h-[84%] w-[58%] object-contain opacity-[0.18] blur-[2px] rotate-[-7deg] scale-110 mix-blend-screen"
+           />
+           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.18)_0%,rgba(7,17,32,.04)_52%,rgba(7,17,32,.42)_100%)]" />
         </div>
 
         {/* Floating animated particles */}
