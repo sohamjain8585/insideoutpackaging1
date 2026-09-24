@@ -1,6 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/use-seo";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
 import { Target, Eye, Shield, Users, Truck, ScanBarcode, BadgeCheck, FlaskConical } from "lucide-react";
 import warehouseImg from "@assets/img18_1781094388914.png";
 import colorRibbonsImg from "@assets/img10_1781094388915.png";
@@ -52,17 +54,27 @@ export default function About() {
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="space-y-6">
               <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary font-bold rounded-full text-sm uppercase tracking-wider">Who We Are</span>
               <h2 className="text-3xl md:text-4xl font-bold text-[#0F2747]">
-                Industrial Labeling Specialists Based in Pune
+                One Partner for All Your Barcode Labeling Needs
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Inside Out Packaging Industries is a dedicated manufacturer and supplier of thermal barcode labels, thermal transfer ribbons, billing rolls, and POS rolls. Our facility is based in Koregaon Bhima, Pune — strategically located to serve Maharashtra's dense industrial and logistics belt.
+                At Inside Out Packaging Industries, we manufacture high-quality barcode labels and provide complete barcode labeling solutions that help businesses track, identify and manage their products with accuracy.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                We focus entirely on the intersection of manufacturing precision and supply chain reliability. When a label fails, a package is misrouted, a production line stops, or a retail checkout halts. We engineer our products so that never happens on your watch.
+                Serving retail and FMCG, logistics and warehousing, manufacturing, and healthcare and pharma, we understand that every industry has its own labeling needs. That is why we offer a full range of products and services under one roof: custom barcode label printing, barcode printers and ribbons, and scanners and software. Each part works together so your system runs smoothly from the first label to the final scan.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                From high-tack asset labels for extreme-environment machinery to millions of POS rolls for multi-branch retail chains, our facility is equipped to handle volume orders without compromising on microscopic accuracy — core tolerances, adhesive peel strength, and barcode grade are verified on every batch.
+                We focus on precision printing, durable materials and consistent quality, so every label scans right the first time. Whether you need a small custom order or large-volume production, our team delivers on time, at competitive prices, with support you can rely on.
               </p>
+              <div className="space-y-4 pt-2">
+                <p className="font-semibold text-[#0F2747]">
+                  Inside Out Packaging Industries: one partner for all your barcode labeling needs.
+                </p>
+                <Link href="/contact">
+                  <Button className="h-12 px-6 rounded-xl font-semibold shadow-sm transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                    Contact Us for a Free Quote
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
           </div>
 
