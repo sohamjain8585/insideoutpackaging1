@@ -85,7 +85,7 @@ export default function About() {
               <Target className="h-14 w-14 text-primary mb-6 opacity-80" />
               <h3 className="text-2xl font-bold text-[#0F2747] mb-4">Our Mission</h3>
               <p className="text-slate-600 leading-relaxed text-lg">
-                To empower domestic supply chains by providing flawlessly manufactured identification, tracking, and billing materials — eliminating production downtime, scan failures, and label-related losses for every client we serve.
+                To help businesses label, track and ship with confidence by manufacturing precise, durable barcode labels and supplying the printers, ribbons and scanners that go with them, delivered on time and backed by responsive support.
               </p>
             </motion.div>
 
@@ -94,7 +94,7 @@ export default function About() {
               <Eye className="h-14 w-14 text-primary mb-6 opacity-80" />
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-slate-300 leading-relaxed text-lg">
-                To become the most trusted label and ribbon supplier in Maharashtra and beyond — known not just for production capacity, but for technical expertise, material innovation, and a client-first supply model that keeps operations moving without interruption.
+                To become a dependable, long-term labeling partner for businesses across retail, logistics, manufacturing and healthcare, where every label we make helps our customers work with greater accuracy and less downtime.
               </p>
             </motion.div>
           </div>
