@@ -1,0 +1,83 @@
+Use the provided industrial barcode-label manufacturing image as the **full-width background image for the homepage hero section** of INSIDE OUT PACKAGING INDUSTRIES.
+
+### HERO SECTION
+
+Create a premium, modern B2B industrial homepage hero using the provided image as the background.
+
+**Background image requirements:**
+
+* Use the provided image as the hero background.
+* Full-width, edge-to-edge layout.
+* Desktop aspect ratio approximately 16:9.
+* Background should cover the entire hero section without stretching or distortion.
+* Use `background-size: cover`.
+* Position the image toward the **center right**, keeping the dark left area visible.
+* Do not crop out the main label manufacturing machinery and label rolls.
+* Add a subtle dark navy gradient overlay from the left side toward the center so white text remains highly readable.
+* Do not place any additional graphics, barcode illustrations, patterns, or stock images over the background.
+* Do not alter or add text to the image itself.
+
+### HERO TEXT
+
+Place the website content on the **left side**, inside the dark negative-space area of the image.
+
+Small eyebrow text:
+
+**BARCODE LABEL MANUFACTURING**
+
+Main headline:
+
+**Precision Labels. Reliable Performance. Trusted Partnership.**
+
+Supporting text:
+
+**Manufacturer of Barcode Labels & Labeling Solutions for Reliable Industrial Identification and Packaging Applications.**
+
+Primary CTA:
+
+**Explore Products**
+
+Secondary CTA:
+
+**Request a Quote**
+
+### DESIGN STYLE
+
+* Premium B2B industrial
+* Clean and modern
+* Professional manufacturing company
+* Strong visual hierarchy
+* Dark navy + white + restrained orange accent
+* Modern typography
+* No excessive animations
+* No clutter
+* No unnecessary decorative elements
+
+### LAYOUT
+
+Desktop:
+
+* Hero height: approximately 650–750px
+* Text width: approximately 40–45%
+* Text aligned left
+* Manufacturing machine and label rolls remain visually dominant on the right
+* Keep sufficient empty space around the headline and buttons
+
+Mobile:
+
+* Do not simply shrink the desktop layout.
+* Reposition/crop the background so the label rolls and manufacturing equipment remain visible.
+* Keep the text highly readable.
+* Use a stronger dark overlay if necessary.
+* Hero height approximately 600–700px.
+* Stack CTA buttons vertically or side-by-side depending on available width.
+
+### IMPORTANT
+
+The background image should communicate **real manufacturing capability**, not a generic printing or warehouse business.
+
+Do not replace the supplied image with another stock image.
+
+The final hero should immediately communicate:
+
+**Barcode Labels → Manufacturing → Precision → Industrial B2B → Reliability**

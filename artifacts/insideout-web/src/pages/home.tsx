@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -10,10 +10,10 @@ import {
   ArrowRight, Factory, Globe2, CheckCircle2, ChevronRight,
   Phone, MessageCircle, Zap, Shield, Settings, Truck,
   Headphones, Award, ChevronDown, Star, Package, Layers, Printer,
-  ScanBarcode, BadgeCheck, Gauge, FlaskConical, ArrowDown
+  ScanBarcode, BadgeCheck, Gauge, FlaskConical
 } from "lucide-react";
 
-import heroImg from "@assets/img18_1781094388914.png";
+import heroManufacturingImg from "@assets/ChatGPT_Image_Sep_24,_2026,_12_10_46_PM_1790232075692.png";
 import barcodeLabelsImg from "@assets/img7_1781094388916.png";
 import logisticsImg from "@assets/img5_1781094388916.png";
 import ribbonsImg from "@assets/img14_1781094388915.png";
@@ -27,8 +27,6 @@ const stats = [
   { value: "9+", label: "Industries Served" },
   { value: "100%", label: "QC Certified Stock" },
 ];
-
-const heroWords = ["Manufacturing", "Logistics", "Retail", "Pharma", "Industrial"];
 
 const whyChooseUs = [
   {
@@ -169,26 +167,8 @@ const trustBadges = [
   { label: "Bulk Production Capability", icon: Gauge },
 ];
 
-// Floating particles config
-const particles = Array.from({ length: 18 }, (_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  size: 2 + Math.random() * 4,
-  duration: 6 + Math.random() * 8,
-  delay: Math.random() * 4,
-}));
-
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [heroWordIndex, setHeroWordIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroWordIndex(i => (i + 1) % heroWords.length);
-    }, 2000);
-    return () => clearInterval(timer);
-  }, []);
 
   useSEO({
     title: "Inside Out Packaging Industries — Barcode Labels & Thermal Ribbons, Pune",
@@ -199,202 +179,71 @@ export default function Home() {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="relative min-h-[calc(100dvh-42px)] flex items-center overflow-hidden">
-        {/* Background image + overlay */}
+      <section className="relative flex h-[80svh] min-h-[600px] max-h-[750px] items-center overflow-hidden bg-[#071120]">
+        {/* Full-width manufacturing image with a left-to-center readability gradient */}
         <div className="absolute inset-0 z-0">
-          <img src={heroImg} alt="Warehouse labeling operations" className="w-full h-full object-cover object-center" />
-           <div className="absolute inset-0 bg-[#0b1a2f]/90" />
-           <div className="absolute inset-0 bg-gradient-to-br from-[#0b1a2f]/95 via-[#0f2747]/80 to-[#071120]/95" />
-           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.95)_0%,rgba(7,17,32,.72)_42%,rgba(7,17,32,.42)_100%)]" />
-           <img
-             src={barcodeLabelsImg}
-             alt=""
-             aria-hidden="true"
-             className="absolute right-[-8%] top-[8%] h-[84%] w-[58%] object-contain opacity-[0.18] blur-[2px] rotate-[-7deg] scale-110 mix-blend-screen"
-           />
-           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.18)_0%,rgba(7,17,32,.04)_52%,rgba(7,17,32,.42)_100%)]" />
-        </div>
-
-        {/* Floating animated particles */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-          {particles.map(p => (
-            <motion.div
-              key={p.id}
-              className="absolute rounded-full bg-primary/30"
-              style={{ left: `${p.x}%`, top: `${p.y}%`, width: p.size, height: p.size }}
-              animate={{
-                y: [0, -30, 0],
-                x: [0, 10, -10, 0],
-                opacity: [0.2, 0.8, 0.2],
-              }}
-              transition={{
-                duration: p.duration,
-                delay: p.delay,
-                 repeat: 0,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-          {/* Glowing orbs */}
-          <motion.div
-            className="absolute w-96 h-96 rounded-full bg-primary/10 blur-3xl"
-            style={{ right: "5%", top: "10%" }}
-            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
-             transition={{ duration: 5, ease: "easeInOut" }}
+          <img
+            src={heroManufacturingImg}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover object-[68%_center] md:object-[center_right]"
           />
-          <motion.div
-            className="absolute w-64 h-64 rounded-full bg-blue-400/10 blur-3xl"
-            style={{ left: "5%", bottom: "15%" }}
-            animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
-             transition={{ duration: 7, ease: "easeInOut", delay: 2 }}
-          />
-        </div>
-
-        {/* Floating label card animation (right side, desktop) */}
-        <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 z-[2] pointer-events-none">
-          {[
-            { label: "Barcode Label", spec: "100×50mm • Code128 • Grade A" },
-            { label: "Wax Ribbon", spec: "110mm×300m • All Printers" },
-            { label: "POS Roll", spec: "80mm×80m • Thermal" },
-          ].map((card, i) => (
-            <motion.div
-              key={i}
-              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-5 py-3 w-52"
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 + i * 0.3, duration: 0.7 }}
-            >
-              <motion.div
-                animate={{ y: [0, -4, 0] }}
-                 transition={{ duration: 3 + i, ease: "easeInOut", delay: i * 0.5 }}
-              >
-                <div className="text-xs text-primary font-bold uppercase tracking-wider mb-1">{card.label}</div>
-                <div className="text-white text-sm font-medium">{card.spec}</div>
-                <div className="mt-2 h-1 rounded-full bg-white/10 overflow-hidden">
-                  <motion.div
-                    className="h-full bg-primary rounded-full"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ delay: 1.5 + i * 0.3, duration: 1.5, ease: "easeOut" }}
-                  />
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,32,.96)_0%,rgba(7,17,32,.88)_34%,rgba(7,17,32,.70)_56%,rgba(7,17,32,.12)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(7,17,32,.38)_0%,transparent_34%)]" />
         </div>
 
         {/* Hero content */}
-        <div className="container mx-auto px-4 md:px-6 relative z-10 py-24">
-          <div className="max-w-3xl">
-            {/* Company name badge */}
+        <div className="container relative z-10 mx-auto px-5 py-20 md:px-8">
+          <div className="max-w-[42rem]">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold mb-6"
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="mb-6 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-white sm:text-sm"
             >
-              <motion.span
-                className="h-2 w-2 rounded-full bg-primary"
-                animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-              <span className="font-bold text-primary">Inside Out Packaging Industries</span>
-              <span className="text-white/60">·</span>
-              <span>Pune, Maharashtra</span>
+              <span className="h-px w-8 bg-primary" />
+              BARCODE LABEL MANUFACTURING
             </motion.div>
 
-            {/* Main headline — word by word reveal */}
-            <div className="mb-6">
-              {["Precision Labels.", "Reliable Performance.", "Trusted Partnership."].map((line, li) => (
-                <motion.div
-                  key={li}
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + li * 0.2 }}
-                >
-                  <span
-                     className={`block text-5xl md:text-7xl font-extrabold leading-[1.02] tracking-[-.055em] ${
-                      li === 1 ? "text-primary" : "text-white"
-                    }`}
-                  >
-                    {line}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Cycling industry word */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="flex items-center gap-3 mb-5"
+            <motion.h1
+              initial={{ opacity: 0, y: 18, filter: "blur(6px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ duration: 0.7, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="mb-6 text-5xl font-extrabold leading-[1.02] tracking-[-0.055em] text-white sm:text-6xl xl:text-[4.25rem]"
             >
-              <span className="text-slate-300 text-lg md:text-xl">Precision solutions for</span>
-              <div className="relative overflow-hidden h-8 w-36">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={heroWordIndex}
-                    initial={{ y: 32, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -32, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="absolute text-primary font-bold text-lg md:text-xl whitespace-nowrap"
-                  >
-                    {heroWords[heroWordIndex]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-            </motion.div>
+              Precision Labels.<br />
+              <span className="text-primary">Reliable Performance.</span><br />
+              Trusted Partnership.
+            </motion.h1>
 
-            {/* Subtitle */}
             <motion.p
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1 }}
-              className="text-base md:text-lg text-slate-300 mb-10 max-w-2xl leading-relaxed"
+              transition={{ duration: 0.55, delay: 0.22 }}
+              className="mb-9 max-w-[36rem] text-base leading-relaxed text-slate-200 sm:text-lg"
             >
-              High-Quality Barcode Labels, Thermal Transfer Ribbons &amp; Identification Solutions for Manufacturing, Logistics, Retail and Industrial Applications. Every roll quality-checked and scan-tested before it leaves our facility.
+              Manufacturer of Barcode Labels &amp; Labeling Solutions for Reliable Industrial Identification and Packaging Applications.
             </motion.p>
 
-            {/* CTA row */}
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3 }}
-              className="flex flex-col sm:flex-row gap-4"
+              transition={{ duration: 0.55, delay: 0.34 }}
+              className="flex flex-col gap-3 sm:flex-row sm:gap-4"
             >
               <Link href="/products" data-testid="link-hero-products">
-                <Button size="lg" className="h-14 px-8 text-base font-semibold w-full sm:w-auto gap-2 shadow-lg shadow-primary/30">
+                <Button size="lg" className="h-[52px] w-full gap-2 rounded-xl px-7 text-base font-semibold shadow-lg shadow-primary/25 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:w-auto">
                   Explore Products <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
-              <a href="https://wa.me/918530658864" target="_blank" rel="noreferrer" data-testid="link-hero-whatsapp">
-                <Button size="lg" className="h-14 px-8 text-base font-semibold bg-green-500 hover:bg-green-600 text-white w-full sm:w-auto gap-2">
-                  <MessageCircle className="h-5 w-5" /> WhatsApp Us
-                </Button>
-              </a>
               <Link href="/contact" data-testid="link-hero-quote">
-                <Button size="lg" variant="outline" className="h-14 px-8 text-base font-semibold bg-white/10 text-white border-white/25 hover:bg-white/20 w-full sm:w-auto backdrop-blur-sm">
-                  Get Free Quote
+                <Button size="lg" variant="outline" className="h-[52px] w-full rounded-xl border-white/50 bg-white/5 px-7 text-base font-semibold text-white transition-colors duration-200 hover:bg-white/15 hover:text-white sm:w-auto">
+                  Request a Quote
                 </Button>
               </Link>
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-white/40"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-        >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
-            <ArrowDown className="h-4 w-4" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* ── Stats ── */}
