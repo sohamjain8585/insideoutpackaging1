@@ -13,6 +13,7 @@ import labelRollImg from "@assets/img_rool_1781094388917.png";
 import ribbonsImg from "@assets/img14_1781094388915.png";
 import colorRibbonsImg from "@assets/img10_1781094388915.png";
 import posRollsImg from "@assets/WhatsApp_Image_2026-01-09_at_11.00.09_AM_1781094388918.jpeg";
+import applicationsHeroImg from "@assets/ChatGPT_Image_Sep_30,_2026,_11_22_05_AM_1790747788341.png";
 
 const applicationsData = [
   {
@@ -311,20 +312,16 @@ export default function Applications() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="page-hero pt-32 pb-20 text-white">
-        <div className="absolute inset-0 pointer-events-none">
-          <motion.div
-            className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[100px]"
-            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-            transition={{ duration: 6, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-[80px]"
-            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
-            transition={{ duration: 8, repeat: Infinity, delay: 2 }}
-          />
-        </div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <section className="page-hero relative min-h-[500px] overflow-hidden pt-32 pb-20 text-white md:min-h-[540px]">
+        <img
+          src={applicationsHeroImg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 z-0 h-full w-full object-cover object-[68%_center] md:object-[center_right]"
+        />
+        <div className="absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(7,17,32,.94)_0%,rgba(7,17,32,.82)_38%,rgba(7,17,32,.45)_68%,rgba(7,17,32,.18)_100%)]" />
+        <div className="absolute inset-0 z-[1] bg-[linear-gradient(0deg,rgba(7,17,32,.42)_0%,transparent_42%)]" />
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
