@@ -14,6 +14,7 @@ import Products from "@/pages/products";
 import Applications from "@/pages/applications";
 import Industries from "@/pages/industries";
 import Contact from "@/pages/contact";
+import BarcodePrinters from "@/pages/barcode-printers";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/products" component={Products} />
+        <Route path="/barcode-printers" component={BarcodePrinters} />
         <Route path="/applications" component={Applications} />
         <Route path="/industries" component={Industries} />
         <Route path="/contact" component={Contact} />

@@ -1,0 +1,857 @@
+TASK: ADD A PROFESSIONAL “BARCODE PRINTERS” PRODUCT SECTION TO THE EXISTING WEBSITE
+
+You are modifying the existing official website of:
+
+INSIDE OUT PACKAGING INDUSTRIES
+
+Business:
+Manufacturer of Barcode Labels & Labeling Solutions
+
+IMPORTANT:
+Do NOT redesign, replace, or disturb the existing website.
+Do NOT change the existing header, navbar, footer, homepage hero, branding, colors, typography, spacing system, existing sections, animations, or working functionality unless absolutely necessary.
+
+This is an ADDITION to the existing website.
+
+==================================================
+1. PRIMARY OBJECTIVE
+==================================================
+
+Add a new professional B2B product section called:
+
+“Barcode Printers”
+
+The section should showcase barcode printer solutions from:
+
+1. DCODE
+2. TSC
+
+The website should communicate that Inside Out Packaging Industries provides barcode printing solutions along with compatible:
+
+- Direct Thermal Labels
+- Thermal Transfer Labels
+- Thermal Transfer Ribbons
+- Wax Ribbons
+- Wax-Resin Ribbons
+- Resin Ribbons
+- Custom Barcode Labels
+
+IMPORTANT POSITIONING:
+
+Inside Out Packaging Industries is primarily a barcode label and labeling-solutions manufacturer.
+
+Do NOT make the website look like a generic printer reseller website.
+
+The printer section should support the company's larger positioning:
+
+PRINTER + LABELS + RIBBONS = COMPLETE BARCODE PRINTING SOLUTION
+
+==================================================
+2. DESIGN DIRECTION
+==================================================
+
+Follow the EXISTING WEBSITE DESIGN SYSTEM first.
+
+If the existing website uses:
+
+- Navy
+- White
+- Orange accent
+- Dark industrial sections
+- Clean cards
+- Premium B2B layout
+
+continue using the same visual language.
+
+Preferred brand palette where compatible with the existing design:
+
+Primary Navy:
+#0B1F3A
+
+Accent Orange:
+#FF7A00
+
+White:
+#FFFFFF
+
+Supporting:
+Dark charcoal / neutral grey / light grey
+
+Do NOT introduce random colors.
+
+Design style:
+
+- Premium
+- Industrial
+- Modern
+- Technical
+- Clean
+- High-end B2B
+- Professional
+- Minimal
+- Trustworthy
+
+Avoid:
+
+- Excessive gradients
+- Excessive orange
+- Cartoon graphics
+- Generic stock-business imagery
+- Overloaded cards
+- Excessive shadows
+- Excessive animations
+- Unnecessary decorative elements
+- Clutter
+- Cheap e-commerce styling
+
+==================================================
+3. WEBSITE INFORMATION ARCHITECTURE
+==================================================
+
+Add this to the main Products structure:
+
+PRODUCTS
+
+├── Barcode Labels
+├── Direct Thermal Labels
+├── Thermal Transfer Labels
+├── Thermal Transfer Ribbons
+├── Barcode Printers
+│   ├── Dcode Printers
+│   └── TSC Printers
+└── Packaging / Labeling Solutions
+
+If the current website has an existing Products menu, integrate “Barcode Printers” into it instead of creating a duplicate menu.
+
+If routing is already implemented, follow the existing routing architecture.
+
+Do not break existing routes.
+
+==================================================
+4. MAIN BARCODE PRINTERS SECTION
+==================================================
+
+Create a dedicated section/page:
+
+BARCODE PRINTERS
+
+Headline:
+
+“Reliable Barcode Printing Solutions”
+
+Supporting text:
+
+“Professional thermal barcode printing solutions for manufacturing, warehousing, logistics, retail, e-commerce and industrial identification applications.”
+
+Add a short introduction:
+
+“Choose the right barcode printer for your application and pair it with compatible labels and thermal transfer ribbons from Inside Out Packaging Industries.”
+
+CTA buttons:
+
+“Explore Printers”
+
+“Request a Quote”
+
+==================================================
+5. BRAND SELECTION AREA
+==================================================
+
+Create two premium brand cards.
+
+CARD 1:
+
+DCODE
+
+Title:
+“Dcode Barcode Printers”
+
+Description:
+
+“Reliable thermal barcode printing solutions for everyday business, warehouse and industrial labeling applications.”
+
+Show:
+
+- Genuine Dcode printer product image
+- Clean professional background
+- Minimal technical visual styling
+
+CTA:
+
+“Explore Dcode Printers”
+
+CARD 2:
+
+TSC
+
+Title:
+“TSC Barcode Printers”
+
+Description:
+
+“Professional thermal printing solutions for barcode, product identification, inventory, logistics and industrial labeling applications.”
+
+Show:
+
+- Genuine TSC printer product image
+- Clean professional background
+- Minimal technical visual styling
+
+CTA:
+
+“Explore TSC Printers”
+
+IMPORTANT:
+
+Do not use fake printer models.
+
+Do not invent specifications.
+
+Do not display specifications unless the exact model information has been verified.
+
+==================================================
+6. PRINTER CATEGORY SECTION
+==================================================
+
+Add a section:
+
+“Choose the Right Printer for Your Application”
+
+Use four clean category cards:
+
+1. Desktop Barcode Printers
+2. Industrial Barcode Printers
+3. Direct Thermal Printers
+4. Thermal Transfer Printers
+
+For TSC, if actual supplied models support it, also allow:
+
+5. Mobile Barcode Printers
+
+Each category should have:
+
+- Small relevant icon or genuine product image
+- Category title
+- One-sentence description
+- “View Printers” CTA
+
+Keep these cards visually consistent.
+
+==================================================
+7. INDIVIDUAL PRINTER MODEL CARD
+==================================================
+
+Build a reusable printer-product-card component.
+
+Every printer model should follow this exact structure:
+
+[PRODUCT IMAGE]
+
+BRAND
+
+MODEL NAME
+
+Short product description
+
+Printer Type:
+Desktop / Industrial / Mobile
+
+Printing:
+Direct Thermal / Thermal Transfer
+
+Resolution:
+203 dpi / 300 dpi / etc.
+
+Print Width:
+Exact verified value
+
+Connectivity:
+Exact verified value
+
+CTA:
+
+“View Details”
+
+“Request a Quote”
+
+IMPORTANT:
+
+Do NOT invent values.
+
+If the exact specification is not available in the product data, hide the field instead of displaying “N/A” everywhere.
+
+==================================================
+8. INDIVIDUAL PRINTER DETAIL PAGE
+==================================================
+
+When the user clicks “View Details”, create a professional product-detail layout.
+
+Desktop layout:
+
+LEFT:
+Large product image gallery
+
+RIGHT:
+Brand
+Model name
+Printer category
+Short description
+Key specifications
+Request Quote button
+
+Example structure:
+
+--------------------------------------------
+
+DCODE
+
+MODEL NAME
+
+Desktop Thermal Barcode Printer
+
+[Short verified description]
+
+TECHNOLOGY
+Direct Thermal / Thermal Transfer
+
+RESOLUTION
+203 dpi
+
+PRINT WIDTH
+XXX mm
+
+PRINT SPEED
+XXX mm/sec
+
+CONNECTIVITY
+USB / Ethernet / Serial / etc.
+
+[ REQUEST A QUOTE ]
+
+--------------------------------------------
+
+Do not display unverified specifications.
+
+==================================================
+9. PRODUCT OVERVIEW
+==================================================
+
+Below the main product area:
+
+Heading:
+
+“Product Overview”
+
+Provide a concise 2–3 paragraph description based only on verified manufacturer information.
+
+Keep the language professional and B2B focused.
+
+Do not make unsupported claims such as:
+
+- “Best printer”
+- “No.1 printer”
+- “Guaranteed performance”
+- “Fastest”
+- “Most reliable”
+- “Industry-leading”
+
+unless there is a verified source supporting the claim.
+
+==================================================
+10. KEY FEATURES
+==================================================
+
+Create a clean icon-based section:
+
+“Key Features”
+
+Use only verified features for each exact model.
+
+Possible feature structure:
+
+- Reliable Thermal Printing
+- Compact Design
+- High-Quality Barcode Output
+- Multiple Connectivity Options
+- Easy Media Loading
+- Suitable for Business Label Printing
+
+IMPORTANT:
+
+Only show a feature when it actually applies to the selected model.
+
+Do not use generic features that are not verified.
+
+==================================================
+11. COMPATIBLE CONSUMABLES
+==================================================
+
+This is a critical section for Inside Out Packaging Industries.
+
+Heading:
+
+“Compatible Labels & Ribbons”
+
+Subheading:
+
+“Complete your barcode printing workflow with compatible labels and thermal transfer ribbons.”
+
+Create two product groups.
+
+LABELS:
+
+- Direct Thermal Labels
+- Thermal Transfer Labels
+- Custom Barcode Labels
+- Shipping Labels
+- Product Identification Labels
+- Inventory Labels
+
+RIBBONS:
+
+- Wax Ribbons
+- Wax-Resin Ribbons
+- Resin Ribbons
+
+Only show ribbon options when the selected printer supports thermal transfer printing.
+
+CTA:
+
+“Get Compatible Labels & Ribbons”
+
+==================================================
+12. PRINTER + LABEL + RIBBON VISUAL
+==================================================
+
+Add a premium visual section explaining the complete workflow:
+
+BARCODE PRINTER
+
+↓
+
+BARCODE LABEL
+
+↓
+
+THERMAL TRANSFER RIBBON
+
+↓
+
+FINISHED PRINTED LABEL
+
+Heading:
+
+“Complete Barcode Printing Solution”
+
+Text:
+
+“From printer selection to compatible labels and ribbons, Inside Out Packaging Industries helps businesses build a coordinated barcode printing workflow.”
+
+Use realistic industrial product imagery.
+
+Avoid cartoon diagrams.
+
+==================================================
+13. APPLICATIONS SECTION
+==================================================
+
+Heading:
+
+“Applications”
+
+Use clean application cards:
+
+Manufacturing
+Warehouse & Inventory
+Logistics & Transportation
+Retail & Distribution
+E-Commerce
+Automotive & Engineering
+Healthcare
+Product Identification
+Asset Tracking
+
+Each card should have:
+
+- Simple professional icon
+- Application name
+- One short description
+
+Do not overcrowd the section.
+
+==================================================
+14. INDUSTRY SECTION
+==================================================
+
+Heading:
+
+“Barcode Printing Solutions for Multiple Industries”
+
+Show:
+
+Manufacturing
+Automotive & Engineering
+Warehousing
+Logistics
+Retail
+E-Commerce
+Pharmaceutical & Healthcare
+Food & FMCG
+
+Use subtle industrial imagery or icons.
+
+==================================================
+15. WHY INSIDE OUT PACKAGING INDUSTRIES
+==================================================
+
+Add a section:
+
+“More Than a Printer”
+
+Text:
+
+“Your barcode printing system depends on more than the printer itself. The right combination of printer, label material and ribbon helps create a consistent labeling workflow.”
+
+Create four cards:
+
+01
+Label Manufacturing
+
+“Barcode labels manufactured for different sizes, materials and applications.”
+
+02
+Printer Compatibility
+
+“Helping you identify suitable labels and ribbons for your printer.”
+
+03
+Custom Label Solutions
+
+“Label specifications can be adapted according to your application requirements.”
+
+04
+Complete Labeling Support
+
+“Printer, labels and ribbons from one coordinated source.”
+
+Do not claim authorized dealership or official distributor status unless it is verified and explicitly provided.
+
+==================================================
+16. PRINTER SELECTION GUIDE
+==================================================
+
+Add:
+
+“Need Help Choosing a Barcode Printer?”
+
+Create a simple interactive-looking selection guide.
+
+Ask users to consider:
+
+1. Label Size
+2. Printing Volume
+3. Direct Thermal or Thermal Transfer
+4. Required Resolution
+5. Connectivity
+6. Operating Environment
+7. Label Material
+8. Ribbon Requirement
+
+CTA:
+
+“Talk to Our Team”
+
+==================================================
+17. FINAL CTA
+==================================================
+
+Create a strong final CTA banner.
+
+Headline:
+
+“Complete Your Barcode Printing Setup”
+
+Text:
+
+“Tell us your printer, label size and application requirements. We can help you identify compatible barcode labels and thermal transfer ribbons.”
+
+Buttons:
+
+“Request a Quote”
+
+“Contact Us”
+
+==================================================
+18. IMAGE REQUIREMENTS
+==================================================
+
+Use professional product photography.
+
+Preferred:
+
+- Genuine manufacturer/product images
+- Clean white or very light background
+- Front 3/4 printer angle
+- High-resolution images
+- Consistent image proportions
+- Product centered
+- No unnecessary people
+- No random office backgrounds
+- No watermarks
+- No distorted product images
+
+IMPORTANT:
+
+Do NOT generate fake Dcode or TSC printer models.
+
+Do NOT modify the shape, branding or physical appearance of real printer products.
+
+If official product images are unavailable, create a clearly neutral placeholder area rather than inventing a model.
+
+Use lazy loading for product images.
+
+Use responsive image sizing.
+
+Add descriptive ALT text.
+
+Examples:
+
+“Dcode thermal barcode printer”
+
+“TSC desktop barcode printer”
+
+“TSC industrial barcode printer”
+
+==================================================
+19. RESPONSIVE DESIGN
+==================================================
+
+Desktop:
+
+- 2-column layouts where appropriate
+- 3 or 4 product cards per row
+- Generous whitespace
+- Strong alignment
+
+Tablet:
+
+- 2-column cards
+
+Mobile:
+
+- 1-column cards
+- Large readable headings
+- Buttons full-width where appropriate
+- No horizontal scrolling
+- Product images remain properly proportioned
+- Specifications should stack vertically
+
+Do NOT allow:
+
+- Text overflow
+- Broken cards
+- Cropped product images
+- Overlapping buttons
+- Horizontal scrolling
+- Tiny unreadable specifications
+
+==================================================
+20. UI / UX
+==================================================
+
+Use consistent:
+
+- Border radius
+- Card spacing
+- Typography
+- Button styles
+- Icon style
+- Section spacing
+
+Follow the existing website design tokens instead of creating a separate design system.
+
+Use subtle hover effects.
+
+Animations should be:
+
+- Fast
+- Smooth
+- Professional
+- Minimal
+
+Do NOT use excessive scroll animations.
+
+==================================================
+21. SEO
+==================================================
+
+Create SEO-friendly page structure.
+
+Suggested page title:
+
+“Barcode Printers | Dcode & TSC Thermal Printers | Inside Out Packaging Industries”
+
+Suggested meta description:
+
+“Explore Dcode and TSC barcode printers along with compatible direct thermal labels, thermal transfer labels and ribbons from Inside Out Packaging Industries.”
+
+Use proper:
+
+H1
+H2
+H3
+
+heading hierarchy.
+
+Add relevant internal links to:
+
+- Barcode Labels
+- Direct Thermal Labels
+- Thermal Transfer Labels
+- Thermal Transfer Ribbons
+- Contact
+- Request Quote
+
+Add Product structured data ONLY when the required product information is actually available.
+
+Do not add fake:
+
+- Prices
+- Ratings
+- Reviews
+- Availability
+- SKU
+- Offers
+
+==================================================
+22. IMPORTANT BUSINESS POSITIONING
+==================================================
+
+Throughout the page, maintain this hierarchy:
+
+PRIMARY:
+Barcode Labels & Labeling Solutions
+
+SECONDARY:
+Barcode Printers
+
+SUPPORTING:
+Thermal Transfer Ribbons
+
+The printer section should generate enquiries for the company's complete labeling ecosystem.
+
+Do not make the site look like a pure printer retailer.
+
+==================================================
+23. DATA STRUCTURE
+==================================================
+
+Create printer data in a reusable structured format.
+
+Example:
+
+printer = {
+  brand,
+  model,
+  category,
+  technology,
+  resolution,
+  printWidth,
+  printSpeed,
+  connectivity,
+  applications,
+  features,
+  compatibleLabels,
+  compatibleRibbons,
+  images
+}
+
+This will allow additional Dcode and TSC models to be added later without redesigning the website.
+
+==================================================
+24. DO NOT BREAK EXISTING WEBSITE
+==================================================
+
+Before making changes:
+
+1. Inspect the existing project structure.
+2. Identify the existing design system.
+3. Identify existing components.
+4. Identify existing routing.
+5. Reuse existing Header.
+6. Reuse existing Footer.
+7. Reuse existing Button components.
+8. Reuse existing Card components where appropriate.
+9. Reuse existing typography.
+10. Reuse existing responsive breakpoints.
+
+Do not duplicate components unnecessarily.
+
+Do not delete existing content.
+
+Do not replace the homepage.
+
+Do not modify unrelated pages.
+
+Do not change existing URLs unless required.
+
+==================================================
+25. QUALITY CHECK BEFORE FINISHING
+==================================================
+
+Before completing the implementation, test:
+
+Desktop:
+1920px
+1440px
+1280px
+
+Tablet:
+1024px
+768px
+
+Mobile:
+430px
+390px
+375px
+
+Check:
+
+✓ No layout overflow
+✓ No broken images
+✓ No overlapping text
+✓ No inconsistent spacing
+✓ No broken navigation
+✓ All CTA buttons work
+✓ All printer cards work
+✓ Product detail pages work
+✓ Mobile menu still works
+✓ Existing website sections remain unchanged
+✓ Footer remains unchanged
+✓ Page loads efficiently
+✓ Images have ALT text
+✓ Headings follow proper hierarchy
+✓ No fake printer specifications
+✓ No unsupported claims
+✓ No placeholder lorem ipsum
+✓ No console errors
+
+==================================================
+FINAL IMPLEMENTATION PRINCIPLE
+==================================================
+
+The finished section should feel like part of the existing Inside Out Packaging Industries website — NOT like a separate template or an e-commerce marketplace.
+
+The visual message should be:
+
+INSIDE OUT PACKAGING INDUSTRIES
+
+Barcode Labels
++
+Barcode Printers
++
+Thermal Transfer Ribbons
+=
+Complete Barcode Printing & Labeling Solutions
+
+Keep the design premium, industrial, technically credible, highly readable and conversion-focused for B2B customers.

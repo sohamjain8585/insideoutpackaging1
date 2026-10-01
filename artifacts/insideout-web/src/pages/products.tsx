@@ -92,6 +92,20 @@ export default function Products() {
         </div>
       </section>
 
+      {/* Additive printer solutions entry point */}
+      <section className="border-b border-slate-200 bg-[#f4f3ee] py-8">
+        <div className="container mx-auto flex flex-col items-start justify-between gap-5 px-4 md:flex-row md:items-center md:px-6">
+          <div>
+            <span className="site-eyebrow">Complete your labeling workflow</span>
+            <h2 className="mt-3 text-xl font-extrabold text-[#0F2747] md:text-2xl">Looking for a barcode printer to pair with your labels?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Explore Dcode and TSC printer options, then discuss compatible labels and ribbons with our team.</p>
+          </div>
+          <Link href="/barcode-printers" className="inline-flex shrink-0 items-center rounded-lg bg-[#0F2747] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#193b63]" data-testid="link-barcode-printers">
+            Explore Barcode Printers <ChevronRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
       {/* Category Icon Strip */}
       <section className="py-10 bg-[#fbfaf7] border-b border-[#e2e4df]">
         <div className="container mx-auto px-4 md:px-6">
