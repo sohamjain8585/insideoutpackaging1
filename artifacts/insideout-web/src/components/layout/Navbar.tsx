@@ -22,6 +22,7 @@ export function Navbar() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Products", href: "/products" },
+    { name: "Barcode Printers", href: "/barcode-printers" },
     { name: "Applications", href: "/applications" },
     { name: "Industries", href: "/industries" },
     { name: "Contact", href: "/contact" },
