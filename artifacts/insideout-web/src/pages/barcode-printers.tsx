@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowDown, ArrowRight, Barcode, Boxes, Check, ChevronRight, CircleHelp, Factory, Layers3, PackageCheck, Printer, ScanLine, Tags, Truck, Warehouse } from "lucide-react";
+import manufacturingApplicationImage from "@assets/a1_1790856461554.webp";
+import warehouseApplicationImage from "@assets/a2_1790856461555.webp";
+import logisticsApplicationImage from "@assets/a3_1790856461556.webp";
+import fulfillmentApplicationImage from "@assets/a4_1790856461557.webp";
+import equipmentApplicationImage from "@assets/a5_1790856461558.webp";
+import { ArrowDown, ArrowRight, Barcode, Check, ChevronRight, CircleHelp, Factory, Layers3, Printer, ScanLine, Tags } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
@@ -8,16 +13,46 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/compone
 import { useSEO } from "@/hooks/use-seo";
 import { BARCODE_PRINTERS, PRINTER_CATEGORIES, PRINTER_HERO_IMAGES, type BarcodePrinter } from "@/data/barcode-printers";
 
-const applicationItems = [
-  { title: "Manufacturing", detail: "Product and process identification.", icon: Factory },
-  { title: "Warehouse & Inventory", detail: "Labels for stock, bins and movement.", icon: Warehouse },
-  { title: "Logistics & Transportation", detail: "Shipping and dispatch workflows.", icon: Truck },
-  { title: "Retail & Distribution", detail: "Product and inventory identification.", icon: Tags },
-  { title: "E-Commerce", detail: "Shipping labels for fulfilment operations.", icon: PackageCheck },
-  { title: "Automotive & Engineering", detail: "Identification across parts and assets.", icon: Boxes },
-  { title: "Healthcare", detail: "Barcode identification requirements.", icon: ScanLine },
-  { title: "Product Identification", detail: "Labels to identify products throughout their lifecycle.", icon: Barcode },
-  { title: "Asset Tracking", detail: "Labels to identify equipment and assets.", icon: Barcode },
+const applicationPhotoItems = [
+  {
+    title: "Manufacturing",
+    detail: "Product and component labels for production workflows.",
+    image: manufacturingApplicationImage,
+    alt: "Barcode printer producing product specification labels beside a metal component on a workbench.",
+  },
+  {
+    title: "Warehouse & Inventory",
+    detail: "Barcode labels for cartons, stock locations and inventory movement.",
+    image: warehouseApplicationImage,
+    alt: "A worker handling a printed barcode label beside cartons and a desktop printer in a warehouse.",
+  },
+  {
+    title: "Logistics & Transportation",
+    detail: "Shipping and parcel labels for sorting, packing and dispatch.",
+    image: logisticsApplicationImage,
+    alt: "A barcode printer feeding shipping labels beside packages on a conveyor.",
+  },
+  {
+    title: "Order Fulfilment",
+    detail: "Print, pick-and-pack and scan steps for outgoing orders.",
+    image: fulfillmentApplicationImage,
+    alt: "A warehouse associate checking a printed barcode label with a handheld scanner at a packing station.",
+  },
+  {
+    title: "Industrial Equipment",
+    detail: "Identification labels for equipment, parts and service assets.",
+    image: equipmentApplicationImage,
+    alt: "A technician working beside industrial machinery and a barcode printer.",
+  },
+];
+
+const additionalApplications = [
+  "Product Identification",
+  "Asset Tracking",
+  "Retail & Distribution",
+  "E-Commerce",
+  "Automotive & Engineering",
+  "Healthcare & Pharmaceuticals",
 ];
 
 const industries = [
@@ -207,10 +242,30 @@ export default function BarcodePrinters() {
           </div>
         </section>
 
-        <section className="py-20 md:py-24">
+        <section id="applications" className="scroll-mt-24 py-20 md:py-24">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="mb-10"><span className="site-eyebrow">Where labels work</span><h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2747] md:text-4xl">Applications</h2></div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{applicationItems.map(({ title, detail, icon: Icon }) => <article key={title} className="rounded-xl border border-slate-200 bg-white p-5 transition-transform duration-200 hover:-translate-y-1"><Icon className="h-5 w-5 text-primary" /><h3 className="mt-4 font-bold text-[#0F2747]">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p></article>)}</div>
+            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div><span className="site-eyebrow">Where labels work</span><h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2747] md:text-4xl">Applications</h2></div>
+              <p className="max-w-xl text-sm leading-6 text-slate-600">See how barcode printing fits into common production, warehouse and dispatch workflows.</p>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {applicationPhotoItems.map(({ title, detail, image, alt }) => (
+                <article key={title} className="industrial-card group overflow-hidden rounded-2xl">
+                  <div className="aspect-[16/10] overflow-hidden bg-[#f5f4ef]">
+                    <img src={image} alt={alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="p-5">
+                    <p className="site-eyebrow">Application</p>
+                    <h3 className="mt-2 text-lg font-bold text-[#0F2747]">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">{detail}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="mt-7 flex flex-wrap items-center gap-2">
+              <span className="mr-1 text-sm font-semibold text-[#0F2747]">More application areas:</span>
+              {additionalApplications.map((item) => <span key={item} className="rounded-full border border-slate-200 bg-[#fbfaf7] px-3 py-1.5 text-sm text-slate-600">{item}</span>)}
+            </div>
           </div>
         </section>
 
