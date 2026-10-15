@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/use-seo";
 import { PRODUCTS, INDUSTRIES } from "@/data/constants";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { PdfDownloadCard } from "@/components/forms/PdfDownloadCard";
 import {
   ArrowRight, Factory, Globe2, CheckCircle2, ChevronRight,
   Phone, MessageCircle, Zap, Shield, Settings, Truck,
@@ -281,6 +282,31 @@ export default function Home() {
             </div>
           ))}
         </motion.div>
+      </section>
+
+      {/* ── Company Resources ── */}
+      <section id="home-company-resources" className="scroll-mt-24 border-y border-[#e2e4df] bg-[#fbfaf7] py-16 md:py-20" data-testid="section-home-company-resources">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="mx-auto mb-10 max-w-2xl text-center">
+            <span className="site-eyebrow">Company Resources</span>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2747] md:text-4xl">Catalogue & Company Profile</h2>
+            <p className="mt-4 leading-7 text-slate-600">Browse our product catalogue or learn more about Inside Out Packaging Industries.</p>
+          </div>
+          <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+            <PdfDownloadCard
+              documentId="catalogue"
+              title="Catalogue"
+              pages="4 pages"
+              description="Product catalogue covering barcode labels, thermal transfer ribbons and printer solutions."
+            />
+            <PdfDownloadCard
+              documentId="company-profile"
+              title="Company Profile"
+              pages="12 pages"
+              description="A fuller overview of our company, products, applications and customer support."
+            />
+          </div>
+        </div>
       </section>
 
       {/* ── Product Categories ── */}
