@@ -6,7 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/use-seo";
 import { PRODUCTS, INDUSTRIES } from "@/data/constants";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
-import { PdfDownloadCard } from "@/components/forms/PdfDownloadCard";
+import { PdfDownloadButton } from "@/components/forms/PdfDownloadButton";
 import {
   ArrowRight, Factory, Globe2, CheckCircle2, ChevronRight,
   Phone, MessageCircle, Zap, Shield, Settings, Truck,
@@ -230,18 +230,28 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.34 }}
-              className="flex flex-col gap-3 sm:flex-row sm:gap-4"
+              className="grid grid-cols-2 gap-3 sm:grid-cols-[max-content_max-content] sm:gap-4"
             >
-              <Link href="/products" data-testid="link-hero-products">
-                <Button size="lg" className="h-[52px] w-full gap-2 rounded-xl px-7 text-base font-semibold shadow-lg shadow-primary/25 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:w-auto">
+              <Link href="/products" className="w-full sm:w-auto" data-testid="link-hero-products">
+                <Button size="lg" className="h-[52px] w-full gap-2 rounded-xl px-3 text-sm font-semibold shadow-lg shadow-primary/25 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:px-6 sm:text-base">
                   Explore Products <ArrowRight className="h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/contact" data-testid="link-hero-quote">
-                <Button size="lg" variant="outline" className="h-[52px] w-full rounded-xl border-white/50 bg-white/5 px-7 text-base font-semibold text-white transition-colors duration-200 hover:bg-white/15 hover:text-white sm:w-auto">
+              <Link href="/contact" className="w-full sm:w-auto" data-testid="link-hero-quote">
+                <Button size="lg" variant="outline" className="h-[52px] w-full rounded-xl border-white/50 bg-white/5 px-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/15 hover:text-white sm:w-auto sm:px-6 sm:text-base">
                   Request a Quote
                 </Button>
               </Link>
+              <PdfDownloadButton
+                documentId="catalogue"
+                title="Catalogue PDF"
+                className="px-3 text-sm sm:px-5"
+              />
+              <PdfDownloadButton
+                documentId="company-profile"
+                title="Company Profile PDF"
+                className="px-2 text-xs sm:px-4 sm:text-sm"
+              />
             </motion.div>
           </div>
         </div>
@@ -282,31 +292,6 @@ export default function Home() {
             </div>
           ))}
         </motion.div>
-      </section>
-
-      {/* ── Company Resources ── */}
-      <section id="home-company-resources" className="scroll-mt-24 border-y border-[#e2e4df] bg-[#fbfaf7] py-16 md:py-20" data-testid="section-home-company-resources">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <span className="site-eyebrow">Company Resources</span>
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2747] md:text-4xl">Catalogue & Company Profile</h2>
-            <p className="mt-4 leading-7 text-slate-600">Browse our product catalogue or learn more about Inside Out Packaging Industries.</p>
-          </div>
-          <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
-            <PdfDownloadCard
-              documentId="catalogue"
-              title="Catalogue"
-              pages="4 pages"
-              description="Product catalogue covering barcode labels, thermal transfer ribbons and printer solutions."
-            />
-            <PdfDownloadCard
-              documentId="company-profile"
-              title="Company Profile"
-              pages="12 pages"
-              description="A fuller overview of our company, products, applications and customer support."
-            />
-          </div>
-        </div>
       </section>
 
       {/* ── Product Categories ── */}

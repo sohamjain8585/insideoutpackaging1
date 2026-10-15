@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Download, FileText, Loader2 } from "lucide-react";
+import { Download, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -11,19 +11,17 @@ import {
 
 type DocumentId = "catalogue" | "company-profile";
 
-interface PdfDownloadCardProps {
+interface PdfDownloadButtonProps {
   documentId: DocumentId;
   title: string;
-  description: string;
-  pages: string;
+  className?: string;
 }
 
-export function PdfDownloadCard({
+export function PdfDownloadButton({
   documentId,
   title,
-  description,
-  pages,
-}: PdfDownloadCardProps) {
+  className = "",
+}: PdfDownloadButtonProps) {
   const [open, setOpen] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState("");
@@ -72,31 +70,25 @@ export function PdfDownloadCard({
 
   return (
     <>
-      <article className="industrial-card flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-primary">
-          <FileText className="h-6 w-6" aria-hidden="true" />
-        </div>
-        <p className="site-eyebrow mt-6">PDF · {pages}</p>
-        <h3 className="mt-2 text-xl font-extrabold text-[#0F2747]">{title}</h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-slate-600">{description}</p>
-        <Button
-          className="mt-6 w-full font-semibold"
-          onClick={() => { setError(""); setOpen(true); }}
-          data-testid={`button-open-download-${documentId}`}
-        >
-          Download {title}<Download className="ml-2 h-4 w-4" />
-        </Button>
-      </article>
+      <Button
+        size="lg"
+        variant="outline"
+        className={`h-[52px] w-full rounded-xl border-white/50 bg-white/5 px-4 text-sm font-semibold text-white transition-colors hover:bg-white/15 hover:text-white sm:w-auto ${className}`}
+        onClick={() => { setError(""); setOpen(true); }}
+        data-testid={`button-open-download-${documentId}`}
+      >
+        {title}<Download className="ml-2 h-4 w-4 shrink-0" aria-hidden="true" />
+      </Button>
 
       <Dialog open={open} onOpenChange={(nextOpen) => { if (!pending) setOpen(nextOpen); }}>
         <DialogContent className="max-h-[90dvh] max-w-lg overflow-y-auto">
           <div className="pr-7">
             <p className="site-eyebrow">Gated document</p>
             <DialogTitle className="mt-3 text-2xl font-extrabold text-[#0F2747]">
-              Get the {title}
+              Get the {title.replace(/ PDF$/, "")}
             </DialogTitle>
             <DialogDescription className="mt-2 leading-6">
-              Enter your contact details to download the {title.toLowerCase()}.
+              Enter your contact details to download the {title.replace(/ PDF$/, "").toLowerCase()}.
             </DialogDescription>
           </div>
 
@@ -162,7 +154,7 @@ export function PdfDownloadCard({
             {error && <p role="alert" className="text-sm font-medium text-red-700">{error}</p>}
             <Button type="submit" className="w-full font-semibold" disabled={pending} data-testid={`button-submit-download-${documentId}`}>
               {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Download className="mr-2 h-4 w-4" />}
-              {pending ? "Preparing your PDF…" : `Download ${title}`}
+              {pending ? "Preparing your PDF…" : `Download ${title.replace(/ PDF$/, "")}`}
             </Button>
           </form>
         </DialogContent>
