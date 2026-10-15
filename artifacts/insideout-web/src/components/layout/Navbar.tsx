@@ -101,6 +101,9 @@ export function Navbar() {
           <button
             className="lg:hidden z-50 p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
             data-testid="button-mobile-menu"
           >
             {isMobileMenuOpen ? (
@@ -114,6 +117,7 @@ export function Navbar() {
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
+                id="mobile-navigation"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}

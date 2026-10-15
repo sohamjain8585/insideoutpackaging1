@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Cpu, ScanLine, ArrowRight, Zap } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 import barcodeLabelsImg from "@assets/img7_1781094388916.png";
 import warehouseImg from "@assets/img18_1781094388914.png";
@@ -218,12 +219,13 @@ function ApplicationCard({ app, i }: { app: typeof applicationsData[0]; i: numbe
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const isEven = i % 2 === 0;
+  const isMobile = useIsMobile();
 
   return (
     <div ref={ref} className={`flex flex-col ${isEven ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 lg:gap-16 items-center`}>
       {/* Image side */}
       <motion.div
-        initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+        initial={{ opacity: 0, x: isMobile ? 0 : isEven ? -40 : 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -251,7 +253,7 @@ function ApplicationCard({ app, i }: { app: typeof applicationsData[0]; i: numbe
 
       {/* Text side */}
       <motion.div
-        initial={{ opacity: 0, x: isEven ? 40 : -40 }}
+        initial={{ opacity: 0, x: isMobile ? 0 : isEven ? 40 : -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}

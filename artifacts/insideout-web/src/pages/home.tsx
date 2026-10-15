@@ -180,7 +180,7 @@ export default function Home() {
   return (
     <Layout>
       {/* ── Hero ── */}
-      <section className="relative flex h-[80svh] min-h-[600px] max-h-[750px] items-center overflow-hidden bg-[#071120]">
+      <section className="relative flex h-auto min-h-[600px] items-center overflow-hidden bg-[#071120] md:h-[80svh] md:max-h-[750px]">
         {/* Full-width manufacturing image with a left-to-center readability gradient */}
         <div className="absolute inset-0 z-0">
           <img
@@ -230,7 +230,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.34 }}
-              className="grid grid-cols-2 gap-3 sm:grid-cols-[max-content_max-content] sm:gap-4"
+              className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 sm:grid-cols-[max-content_max-content] sm:gap-4"
             >
               <Link href="/products" className="w-full sm:w-auto" data-testid="link-hero-products">
                 <Button size="lg" className="h-[52px] w-full gap-2 rounded-xl px-3 text-sm font-semibold shadow-lg shadow-primary/25 transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98] sm:w-auto sm:px-6 sm:text-base">

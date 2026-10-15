@@ -132,11 +132,11 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-7 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {currentYear} Inside Out Packaging Industries. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center md:flex-nowrap">
             <span>ISO-Grade Quality Process</span>
-            <span className="w-1 h-1 rounded-full bg-slate-600" />
+            <span className="hidden h-1 w-1 rounded-full bg-slate-600 md:block" />
             <span>Koregaon Bhima, Pune 412216</span>
-            <span className="w-1 h-1 rounded-full bg-slate-600" />
+            <span className="hidden h-1 w-1 rounded-full bg-slate-600 md:block" />
             <span>Made in India</span>
           </div>
         </div>
