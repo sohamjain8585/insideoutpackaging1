@@ -21,6 +21,24 @@ const row = (label: string, value: string) =>
     <td style="padding:10px 0;font-weight:600;color:#0F2747;font-size:14px;">${value}</td>
   </tr>`;
 
+const escapeHtml = (value: string) =>
+  value.replace(/[&<>"']/g, (character) => {
+    const entities: Record<string, string> = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return entities[character];
+  });
+
+const safePdfRow = (label: string, value: string) =>
+  `<tr>
+    <td style="padding:10px 0;color:#64748b;width:150px;vertical-align:top;font-size:14px;">${escapeHtml(label)}</td>
+    <td style="padding:10px 0;font-weight:600;color:#0F2747;font-size:14px;">${escapeHtml(value)}</td>
+  </tr>`;
+
 export async function sendQuoteEmail(data: {
   name: string;
   email: string;
@@ -111,6 +129,46 @@ export async function sendInquiryEmail(data: {
     to: RECIPIENT,
     replyTo: data.email,
     subject: `[INQUIRY] ${data.name}${data.company ? ` · ${data.company}` : ""} — ${data.phone}`,
+    html,
+  });
+}
+
+export async function sendPdfDownloadEmail(data: {
+  name: string;
+  email: string;
+  company: string;
+  document: string;
+  requestedAt: Date;
+}) {
+  const transport = createTransport();
+  if (!transport) return;
+
+  const rows = [
+    safePdfRow("Name", data.name),
+    safePdfRow("Work email", data.email),
+    safePdfRow("Company", data.company),
+    safePdfRow("Document", data.document),
+    safePdfRow("Requested at (UTC)", data.requestedAt.toISOString()),
+  ].join("");
+
+  const html = `
+<div style="font-family:Arial,sans-serif;max-width:620px;margin:0 auto;">
+  <div style="background:#0F2747;padding:28px 32px;border-radius:8px 8px 0 0;">
+    <div style="color:#F97316;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Inside Out Packaging Industries</div>
+    <h2 style="color:#ffffff;margin:0;font-size:22px;">New PDF Download Request</h2>
+    <p style="color:#94a3b8;margin:6px 0 0;font-size:13px;">A visitor requested a gated website document</p>
+  </div>
+  <div style="padding:32px;background:#ffffff;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 8px 8px;">
+    <table style="width:100%;border-collapse:collapse;">${rows}</table>
+    <p style="margin:24px 0 0;color:#64748b;font-size:12px;line-height:1.6;">These contact details were entered by the visitor and have not been independently verified.</p>
+  </div>
+</div>`;
+
+  await transport.sendMail({
+    from: `"Inside Out Packaging — Website" <${process.env.GMAIL_USER}>`,
+    to: RECIPIENT,
+    replyTo: data.email,
+    subject: "[PDF DOWNLOAD] New website document request",
     html,
   });
 }

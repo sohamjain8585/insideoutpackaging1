@@ -55,3 +55,25 @@ export const SubmitQuoteBody = zod.object({
 })
 
 
+/**
+ * @summary Record a visitor request and return the selected PDF
+ */
+export const requestPdfDownloadBodyNameMin = 2;
+export const requestPdfDownloadBodyNameMax = 120;
+
+export const requestPdfDownloadBodyEmailMax = 254;
+
+export const requestPdfDownloadBodyCompanyMin = 2;
+export const requestPdfDownloadBodyCompanyMax = 160;
+
+
+
+export const RequestPdfDownloadBody = zod.object({
+  "document": zod.enum(['catalogue', 'company-profile']),
+  "name": zod.string().min(requestPdfDownloadBodyNameMin).max(requestPdfDownloadBodyNameMax),
+  "email": zod.string().email().max(requestPdfDownloadBodyEmailMax),
+  "company": zod.string().min(requestPdfDownloadBodyCompanyMin).max(requestPdfDownloadBodyCompanyMax),
+  "consent": zod.literal(true)
+})
+
+

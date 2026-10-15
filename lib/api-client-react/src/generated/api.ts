@@ -24,6 +24,7 @@ import type {
   HealthStatus,
   InquiryInput,
   InquiryResponse,
+  PdfDownloadRequest,
   QuoteInput
 } from './api.schemas';
 
@@ -257,5 +258,76 @@ export const useSubmitQuote = <TError = ErrorType<ErrorResponse>,
         TContext
       > => {
       return useMutation(getSubmitQuoteMutationOptions(options));
+    }
+
+export const getRequestPdfDownloadUrl = () => {
+
+
+
+
+  return `/api/pdf-downloads`
+}
+
+/**
+ * @summary Record a visitor request and return the selected PDF
+ */
+export const requestPdfDownload = async (pdfDownloadRequest: PdfDownloadRequest, options?: RequestInit): Promise<Blob> => {
+
+  return customFetch<Blob>(getRequestPdfDownloadUrl(),
+  {
+    ...options,
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...options?.headers },
+    body: JSON.stringify(
+      pdfDownloadRequest,)
+  }
+);}
+
+
+
+
+export const getRequestPdfDownloadMutationOptions = <TError = ErrorType<ErrorResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof requestPdfDownload>>, TError,{data: BodyType<PdfDownloadRequest>}, TContext>, request?: SecondParameter<typeof customFetch>}
+): UseMutationOptions<Awaited<ReturnType<typeof requestPdfDownload>>, TError,{data: BodyType<PdfDownloadRequest>}, TContext> => {
+
+const mutationKey = ['requestPdfDownload'];
+const {mutation: mutationOptions, request: requestOptions} = options ?
+      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
+      options
+      : {...options, mutation: {...options.mutation, mutationKey}}
+      : {mutation: { mutationKey, }, request: undefined};
+
+
+
+
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof requestPdfDownload>>, {data: BodyType<PdfDownloadRequest>}> = (props) => {
+          const {data} = props ?? {};
+
+          return  requestPdfDownload(data,requestOptions)
+        }
+
+
+
+
+
+
+  return  { mutationFn, ...mutationOptions }}
+
+    export type RequestPdfDownloadMutationResult = NonNullable<Awaited<ReturnType<typeof requestPdfDownload>>>
+    export type RequestPdfDownloadMutationBody = BodyType<PdfDownloadRequest>
+    export type RequestPdfDownloadMutationError = ErrorType<ErrorResponse>
+
+    /**
+ * @summary Record a visitor request and return the selected PDF
+ */
+export const useRequestPdfDownload = <TError = ErrorType<ErrorResponse>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof requestPdfDownload>>, TError,{data: BodyType<PdfDownloadRequest>}, TContext>, request?: SecondParameter<typeof customFetch>}
+ ): UseMutationResult<
+        Awaited<ReturnType<typeof requestPdfDownload>>,
+        TError,
+        {data: BodyType<PdfDownloadRequest>},
+        TContext
+      > => {
+      return useMutation(getRequestPdfDownloadMutationOptions(options));
     }
 

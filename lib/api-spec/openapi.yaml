@@ -11,6 +11,8 @@ tags:
     description: Health operations
   - name: inquiries
     description: Product inquiry and quote request operations
+  - name: pdf-downloads
+    description: Gated website PDF downloads
 paths:
   /healthz:
     get:
@@ -71,6 +73,38 @@ paths:
                 $ref: "#/components/schemas/InquiryResponse"
         "400":
           description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /pdf-downloads:
+    post:
+      operationId: requestPdfDownload
+      tags: [pdf-downloads]
+      summary: Record a visitor request and return the selected PDF
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PdfDownloadRequest"
+      responses:
+        "200":
+          description: The requested PDF file
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "503":
+          description: The requested document is temporarily unavailable
           content:
             application/json:
               schema:
@@ -137,6 +171,34 @@ components:
           type: ["string", "null"]
         message:
           type: ["string", "null"]
+
+    PdfDownloadRequest:
+      type: object
+      required:
+        - document
+        - name
+        - email
+        - company
+        - consent
+      properties:
+        document:
+          type: string
+          enum: [catalogue, company-profile]
+        name:
+          type: string
+          minLength: 2
+          maxLength: 120
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        company:
+          type: string
+          minLength: 2
+          maxLength: 160
+        consent:
+          type: boolean
+          enum: [true]
 
     InquiryResponse:
       type: object

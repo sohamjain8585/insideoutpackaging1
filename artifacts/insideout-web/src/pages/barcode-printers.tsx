@@ -9,6 +9,7 @@ import { ArrowDown, ArrowRight, Barcode, Check, ChevronRight, CircleHelp, Factor
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
+import { PdfDownloadCard } from "@/components/forms/PdfDownloadCard";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { useSEO } from "@/hooks/use-seo";
 import { BARCODE_PRINTERS, PRINTER_CATEGORIES, PRINTER_HERO_IMAGES, type BarcodePrinter } from "@/data/barcode-printers";
@@ -282,6 +283,30 @@ export default function BarcodePrinters() {
               ["03", "Custom Label Solutions", "Label specifications can be adapted according to your application requirements."],
               ["04", "Complete Labeling Support", "Printer, labels and ribbons from one coordinated source."],
             ].map(([num, title, copy]) => <article key={num} className="border-t border-white/20 pt-4"><span className="mono-label text-orange-300">{num}</span><h3 className="mt-3 text-lg font-bold">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-300">{copy}</p></article>)}</div>
+          </div>
+        </section>
+
+        <section id="company-resources" className="scroll-mt-24 bg-[#fbfaf7] py-20 md:py-24">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mx-auto mb-10 max-w-2xl text-center">
+              <span className="site-eyebrow">Company resources</span>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#0F2747] md:text-4xl">Catalogue & Company Profile</h2>
+              <p className="mt-4 leading-7 text-slate-600">Download our product catalogue or learn more about Inside Out Packaging Industries.</p>
+            </div>
+            <div className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+              <PdfDownloadCard
+                documentId="catalogue"
+                title="Catalogue"
+                pages="4 pages"
+                description="Product catalogue covering barcode labels, thermal transfer ribbons and printer solutions."
+              />
+              <PdfDownloadCard
+                documentId="company-profile"
+                title="Company Profile"
+                pages="12 pages"
+                description="A fuller overview of our company, products, applications and customer support."
+              />
+            </div>
           </div>
         </section>
 

@@ -37,6 +37,31 @@ export interface QuoteInput {
   message?: string | null;
 }
 
+export type PdfDownloadRequestDocument = typeof PdfDownloadRequestDocument[keyof typeof PdfDownloadRequestDocument];
+
+
+export const PdfDownloadRequestDocument = {
+  catalogue: 'catalogue',
+  'company-profile': 'company-profile',
+} as const;
+
+export interface PdfDownloadRequest {
+  document: PdfDownloadRequestDocument;
+  /**
+     * @minLength 2
+     * @maxLength 120
+     */
+  name: string;
+  /** @maxLength 254 */
+  email: string;
+  /**
+     * @minLength 2
+     * @maxLength 160
+     */
+  company: string;
+  consent: true;
+}
+
 export interface InquiryResponse {
   id: number;
   success: boolean;

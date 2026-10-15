@@ -10,4 +10,6 @@ export * from './errorResponse';
 export * from './healthStatus';
 export * from './inquiryInput';
 export * from './inquiryResponse';
+export * from './pdfDownloadRequest';
+export * from './pdfDownloadRequestDocument';
 export * from './quoteInput';
